@@ -1,0 +1,28 @@
+# --- Compilación de LaTeX (todo esto se regenera) ---
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+
+# --- Salida generada: se construye en CI, nunca se commitea ---
+tex/main.pdf
+/site/
+/build/
+
+# --- Sistema y editores ---
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+*.swp
+*~

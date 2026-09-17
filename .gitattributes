@@ -1,0 +1,12 @@
+# Normaliza los finales de línea en el repositorio (LF), de modo que da igual
+# desde qué máquina o editor se escriba: no aparecen diffs falsos.
+* text=auto
+
+*.tex   text diff=tex
+*.md    text
+*.yml   text
+*.html  text
+
+*.jpg   binary
+*.png   binary
+*.pdf   binary

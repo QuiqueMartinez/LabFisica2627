@@ -1,0 +1,133 @@
+\documentclass[twocolumn,openany,10pt]{book}
+
+% --- Idioma y codificación ---
+% El contenido de las sesiones está en català; el material extra
+% todavía tiene textos en castellano, por eso se cargan los dos.
+\usepackage[spanish,main=catalan]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% --- Tipografía y maquetación ---
+\usepackage{montserrat}
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{geometry}
+\geometry{a4paper, margin=1.10cm}
+\setlength{\columnsep}{0.80cm}
+
+% --- Párrafos ---
+\usepackage{setspace}
+\usepackage{enumitem}
+\setstretch{1.25}
+\usepackage{microtype}
+\SetTracking{encoding={*}, shape=sc}{40}
+\setlength{\parindent}{1.0em}
+\setlength{\parskip}{1.2em}
+
+% --- Propiedades de los títulos ---
+\usepackage{titlesec}
+
+% El número no se imprime: la cabecera ya dice "Sessió N" (viene de meta.tex).
+% El contador sigue avanzando, así las figuras se numeran 1.1, 1.2, 2.1...
+\titleformat{\chapter}
+  {\normalfont\Large\bfseries}
+  {}{0pt}{}
+
+\titleformat{\section}
+  {\normalfont\large\bfseries}
+  {\thesection}{1em}{}
+
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries}
+  {\thesubsection}{1em}{}
+
+\makeatletter
+\renewcommand\section{\@startsection
+  {section}{1}{0pt}
+  {0.8ex plus .2ex minus .2ex}
+  {0.4ex plus .2ex}
+  {\normalfont\Large\bfseries}
+}
+
+\renewcommand\subsection{\@startsection
+  {subsection}{2}{0pt}
+  {0.4ex plus .2ex minus .2ex}
+  {0.15ex plus .1ex}
+  {\normalfont\large\bfseries}
+}
+
+\renewcommand\subsubsection{\@startsection
+  {subsubsection}{3}{0pt}
+  {0.10ex plus .05ex minus .05ex}
+  {0.05ex plus .01ex}
+  {\normalfont\normalsize\bfseries}
+}
+\makeatother
+
+\usepackage[font={small,it}]{caption}
+\setcounter{secnumdepth}{0}
+
+% --- Notas al pie ---
+\setlength{\skip\footins}{2.0em}
+\setlength{\footnotesep}{1.2em}
+\setlength{\belowcaptionskip}{0pt}
+
+% --- Gráficos y tablas ---
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{textcomp}
+\usepackage{changepage}
+\usepackage{float}
+
+% --- Matemáticas ---
+\usepackage{amsmath, amssymb}
+
+% --- Macros del proyecto (\sessio, \sessioMeta) ---
+\input{styles/labfisica}
+
+% --- Pie de página ---
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyfoot[C]{%
+  \footnotesize
+  Copyleft 2026 · Enrique Martínez Bueno · Textos sota llicència CC BY-SA 4.0\\
+  Imatges de Wikimedia Commons segons la llicència indicada en cada cas.
+}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Los capítulos de book usan automáticamente el estilo "plain".
+% Lo redefinimos para que el pie aparezca también en esas páginas.
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{%
+    \footnotesize
+    Copyleft 2026 · Enrique Martínez Bueno · Textos sota llicència CC BY-SA 4.0\\
+  }
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+}
+
+\begin{document}
+
+\mainmatter
+
+% --- Sesiones ---
+% Cada \sessio lee su meta.tex y monta continguts + activitats
+% (+ investiga, si existe). Las sesiones en estat=esborrany se omiten.
+\sessio{sessio_01}
+\sessio{sessio_02}
+
+% --- Material extra ---
+\chapter{Material extra}
+\graphicspath{{chapters/contents/extra/}{}}
+\input{chapters/contents/extra/noticies}
+\input{chapters/contents/extra/recomanacions}
+
+\end{document}

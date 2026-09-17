@@ -1,0 +1,70 @@
+% =====================================================================
+%  labfisica.tex — macros propias del proyecto
+%  Se carga desde el preámbulo de main.tex con \input{styles/labfisica}
+% =====================================================================
+
+\usepackage{keyval}
+
+% --- Metadatos de sesión -------------------------------------------
+% Cada carpeta chapters/contents/sessio_XX/ tiene un meta.tex con:
+%
+%   \sessioMeta{
+%     numero = 1,
+%     titol  = {Títol en català},
+%     data   = {2026-09-14},
+%     blocs  = {materia},
+%     estat  = {publicat}
+%   }
+%
+% El mismo fichero lo leerá el generador web, así que la fecha va
+% siempre en formato ISO (aaaa-mm-dd) y se formatea al imprimir.
+
+\makeatletter
+
+\define@key{sessio}{numero}{\def\sessioNumero{#1}}
+\define@key{sessio}{titol} {\def\sessioTitol{#1}}
+\define@key{sessio}{data}  {\def\sessioData{#1}}
+\define@key{sessio}{blocs} {\def\sessioBlocs{#1}}
+\define@key{sessio}{estat} {\def\sessioEstat{#1}}
+
+\newcommand{\sessioMeta}[1]{\setkeys{sessio}{#1}}
+
+% 2026-09-14 --> 14/09/2026
+\def\lf@datailegible#1-#2-#3\@nil{#3/#2/#1}
+\newcommand{\lf@data}{\expandafter\lf@datailegible\sessioData\@nil}
+
+\newcommand{\lf@publicat}{publicat}
+
+% --- Partes de una sesión ------------------------------------------
+% Obligatorias: continguts y activitats. Opcional: investiga (al final).
+\newcommand{\lf@obligatoria}[2]{%
+  \IfFileExists{chapters/contents/#1/#2.tex}%
+    {\input{chapters/contents/#1/#2.tex}}%
+    {\GenericWarning{}{labfisica: falta el fichero obligatorio #1/#2.tex}}%
+}
+\newcommand{\lf@opcional}[2]{%
+  \IfFileExists{chapters/contents/#1/#2.tex}%
+    {\input{chapters/contents/#1/#2.tex}}{}%
+}
+
+% --- \sessio{sessio_01} --------------------------------------------
+% Lee los metadatos, escribe la cabecera y monta las partes en orden.
+% Las sesiones con estat distinto de "publicat" no se renderizan.
+\newcommand{\sessio}[1]{%
+  \def\sessioNumero{?}\def\sessioTitol{}\def\sessioData{0000-00-00}%
+  \def\sessioBlocs{}\def\sessioEstat{esborrany}%
+  \lf@obligatoria{#1}{meta}%
+  \ifx\sessioEstat\lf@publicat
+    % Así los ficheros de contenido citan solo images/foto.jpg
+    \graphicspath{{chapters/contents/#1/}{}}%
+    \chapter{Sessió \sessioNumero. \sessioTitol}%
+    {\small\textit{\lf@data}\par}%
+    \lf@obligatoria{#1}{continguts}%
+    \lf@obligatoria{#1}{activitats}%
+    \lf@opcional{#1}{investiga}%
+  \else
+    \GenericWarning{}{labfisica: sesion #1 omitida (estat=\sessioEstat)}%
+  \fi
+}
+
+\makeatother
