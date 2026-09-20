@@ -1,9 +1,9 @@
 <!doctype html>
 <!--
-  Página provisional.
-  El generador web todavía no existe: por ahora este index solo enlaza
-  el PDF que compila GitHub Actions. Se sustituirá cuando montemos el
-  pipeline .tex -> HTML.
+  Página provisional (WIP).
+  El generador web todavía no existe: por ahora este index enlaza a mano
+  los PDF de cada sesión, copiados en docs/pdf/. Se sustituirá cuando
+  montemos el pipeline .tex -> HTML.
 -->
 <html lang="ca">
 <head>
@@ -21,10 +21,29 @@
   }
   h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
   p.lead { color: #666; margin-top: 0; }
+  .avis {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e0a500;
+    border-radius: 0.4rem;
+    background: rgba(224, 165, 0, 0.1);
+    font-size: 0.95rem;
+  }
+  h2 {
+    margin-top: 2.5rem;
+    font-size: 1.15rem;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 0.3rem;
+  }
+  ul.docs {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  ul.docs li { margin: 0.5rem 0; }
   a.pdf {
     display: inline-block;
-    margin-top: 1.5rem;
-    padding: 0.6rem 1.1rem;
+    padding: 0.5rem 1rem;
     border: 1px solid currentColor;
     border-radius: 0.4rem;
     text-decoration: none;
@@ -36,10 +55,22 @@
   <h1>Laboratori de Física i Química</h1>
   <p class="lead">Curs 2026–2027</p>
 
-  <p>Aquesta web encara s'està construint. De moment pots descarregar
-     el dossier complet en PDF:</p>
+  <p class="avis">
+    Aquesta web encara està en construcció. De moment només es poden
+    descarregar els PDF de les sessions ja preparades.
+  </p>
 
-  <a class="pdf" href="curs_fisica_quimica.pdf">Descarregar el PDF</a>
+  <h2>Sessió 01</h2>
+  <ul class="docs">
+    <li><a class="pdf" href="pdf/sessio_01_continguts.pdf">Continguts</a></li>
+    <li><a class="pdf" href="pdf/sessio_01_activitats.pdf">Activitats</a></li>
+    <li><a class="pdf" href="pdf/sessio_01_solucions.pdf">Solucions</a></li>
+  </ul>
+
+  <h2>Sessió 02</h2>
+  <ul class="docs">
+    <li><a class="pdf" href="pdf/sessio_02_activitats.pdf">Activitats</a></li>
+  </ul>
 
   <footer>
     Copyleft 2026 · Enrique Martínez Bueno · Textos sota llicència CC BY-SA 4.0<br>
