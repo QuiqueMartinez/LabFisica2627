@@ -17,6 +17,7 @@
 # --- Salida generada: se construye en CI, nunca se commitea ---
 # (los PDFs que sí se publican viven en docs/pdf/, copiados a mano por ahora)
 tex/**/*.pdf
+/draft/
 /site/
 /build/
 
