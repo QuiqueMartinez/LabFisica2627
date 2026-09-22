@@ -9,7 +9,11 @@
 
 % --- Tipografía y maquetación ---
 \usepackage{montserrat}
+\usepackage{roboto}
+
+\renewcommand{\sfdefault}{Montserrat-TLF}
 \renewcommand{\familydefault}{\sfdefault}
+
 
 \usepackage{geometry}
 \geometry{a4paper, margin=1.10cm}
@@ -103,8 +107,10 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[R]{\small Traducció al català assistida per intel·ligència artificial.}
-
+\fancyhead[R]{%
+    {\roboto\robotocondensed\small
+    Traducció al català assistida per intel·ligència artificial.}%
+}
 \fancyfoot[C]{%
   \footnotesize
   Copyleft 2026 · Enrique Martínez Bueno · Textos sota llicència CC BY-SA 4.0
@@ -117,7 +123,10 @@
 % Lo redefinimos para que el pie aparezca también en esas páginas.
 \fancypagestyle{plain}{
   \fancyhf{}
-  \fancyhead[R]{\small Traducció al català assistida per intel·ligència artificial.}
+\fancyhead[R]{%
+    {\roboto\robotocondensed\small
+    Traducció al català assistida per intel·ligència artificial.}%
+}
   \fancyfoot[C]{%
     \footnotesize
     Copyleft 2026 · Enrique Martínez Bueno · Textos sota llicència CC BY-SA 4.0
@@ -145,5 +154,5 @@
 %\input{chapters/contents/sessio_01/continguts.tex}
 %\input{chapters/contents/sessio_01/activitats.tex}
 %\input{chapters/contents/sessio_01/solucions.tex}
-\input{chapters/contents/sessio_02/activitats.tex}
+\input{draft/continguts.tex}
 \end{document}
