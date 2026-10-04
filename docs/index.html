@@ -4,6 +4,9 @@
   El generador web todavía no existe: por ahora este index enlaza a mano
   los PDF de cada sesión, copiados en docs/pdf/. Se sustituirá cuando
   montemos el pipeline .tex -> HTML.
+
+  Regla: solo se enlazan ficheros que existen en docs/pdf/.
+  Las soluciones NO se publican (se trabajan en clase).
 -->
 <html lang="ca">
 <head>
@@ -11,80 +14,156 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Laboratori de Física i Química</title>
 <style>
-  :root { color-scheme: light dark; }
+  :root {
+    color-scheme: light dark;
+    --text: #1a1a1a;
+    --muted: #5f5f5f;
+    --rule: #d8d8d8;
+    --bg: #fdfdfc;
+    --accent: #0b5d8f;
+    --avis-border: #e0a500;
+    --avis-bg: rgba(224, 165, 0, 0.10);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text: #e8e8e6;
+      --muted: #a3a3a0;
+      --rule: #3a3a3a;
+      --bg: #16171a;
+      --accent: #7cc0ec;
+      --avis-bg: rgba(224, 165, 0, 0.14);
+    }
+  }
+  * { box-sizing: border-box; }
   body {
     font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
     line-height: 1.6;
-    max-width: 40rem;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 42rem;
     margin: 0 auto;
-    padding: 3rem 1.25rem;
+    padding-block: 3rem;
+    padding-inline: 1.25rem;
   }
-  h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
-  p.lead { color: #666; margin-top: 0; }
+  h1 { font-size: 1.6rem; margin-bottom: 0.25rem; line-height: 1.25; }
+  p.lead { color: var(--muted); margin-top: 0; }
   .avis {
-    margin-top: 1.5rem;
-    padding: 0.75rem 1rem;
-    border: 1px solid #e0a500;
+    margin-top: 1.75rem;
+    padding: 0.9rem 1.1rem;
+    border: 1px solid var(--avis-border);
     border-radius: 0.4rem;
-    background: rgba(224, 165, 0, 0.1);
+    background: var(--avis-bg);
     font-size: 0.95rem;
   }
-  h2 {
-    margin-top: 2.5rem;
+  .avis p { margin: 0 0 0.75rem; }
+  .avis p:last-child { margin-bottom: 0; }
+  .sessio { margin-top: 2.5rem; }
+  .sessio h2 {
     font-size: 1.15rem;
-    border-bottom: 1px solid currentColor;
-    padding-bottom: 0.3rem;
+    margin: 0 0 0.75rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.35rem;
+    line-height: 1.35;
+  }
+  .sessio h2 .data {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--muted);
+    letter-spacing: 0.02em;
   }
   ul.docs {
     list-style: none;
     padding: 0;
-    margin: 1rem 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
   }
-  ul.docs li { margin: 0.5rem 0; }
   a.pdf {
     display: inline-block;
-    padding: 0.5rem 1rem;
-    border: 1px solid currentColor;
+    padding: 0.45rem 1rem;
+    border: 1px solid var(--rule);
     border-radius: 0.4rem;
     text-decoration: none;
+    color: var(--accent);
+    font-size: 0.95rem;
   }
-  footer { margin-top: 3rem; font-size: 0.8rem; color: #666; }
+  a.pdf:hover, a.pdf:focus { border-color: var(--accent); }
+  footer {
+    margin-top: 3.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
 </style>
 </head>
 <body>
   <h1>Laboratori de Física i Química</h1>
   <p class="lead">Curs 2026–2027</p>
 
-  <p class="avis">
-    Aquesta web encara està en construcció. De moment només es poden
-    descarregar els PDF de les sessions ja preparades. <br><br>
+  <div class="avis">
+    <p>
+      Aquesta web encara està en construcció. De moment només es poden
+      descarregar els PDF de les sessions ja preparades.
+    </p>
+    <p>
+      Els continguts recullen els temes que han anat sortint a classe, però també
+      les coses que us han despertat curiositat, les preguntes que han anat
+      apareixent i les aportacions que vulgueu fer. La idea és tenir-ho tot
+      recollit perquè ho pugueu repassar amb calma quan us vingui de gust.
+    </p>
+    <p>
+      Si hi ha alguna activitat, es publica el mateix dia de la classe. Les
+      solucions encara no es publicaran: primer es treballaran a classe i més
+      endavant es publicaran.
+    </p>
+  </div>
 
-    Els continguts recullen els temes que han anat sortint a classe, però també les coses que us han despertat curiositat, les preguntes que han anat apareixent i les aportacions que vulgueu fer. La idea és tenir-ho tot recollit perquè ho pugueu repassar amb calma quan us vingui de gust.<br><br>
-    Si hi ha alguna activitat, es publica el mateix dia de la classe. La setmana següent, si escau, se’n publiquen també les solucions.
-  </p>
+  <section class="sessio">
+    <h2>Sessió 01. Què és tot això de la ciència?
+      <span class="data">14/09/2026</span>
+    </h2>
+    <ul class="docs">
+      <li><a class="pdf" href="pdf/sessio_01_continguts.pdf">Continguts</a></li>
+      <li><a class="pdf" href="pdf/sessio_01_activitats.pdf">Activitats</a></li>
+    </ul>
+  </section>
 
-  <h2>Sessió 01 (14/09/2026) Què és tot això de la ciència?</h2>
-  <ul class="docs">
-    <li><a class="pdf" href="pdf/sessio_01_continguts.pdf">Continguts</a></li>
-    <li><a class="pdf" href="pdf/sessio_01_activitats.pdf">Activitats</a></li>
-    <li><a class="pdf" href="pdf/sessio_01_solucions.pdf">Solucions</a></li>
-  </ul>
+  <section class="sessio">
+    <h2>Sessió 02. Física per tot arreu
+      <span class="data">21/09/2026</span>
+    </h2>
+    <ul class="docs">
+      <li><a class="pdf" href="pdf/sessio_02_continguts.pdf">Continguts</a></li>
+      <li><a class="pdf" href="pdf/sessio_02_activitats.pdf">Activitats</a></li>
+    </ul>
+  </section>
 
-  <h2>Sessió 02 (21/09/26). Física per tot arreu</h2>
-  <ul class="docs">
-    <li><a class="pdf" href="pdf/sessio_02_continguts.pdf">Continguts</a></li>
-    <li><a class="pdf" href="pdf/sessio_02_activitats.pdf">Activitats</a></li>
-  </ul>
+  <section class="sessio">
+    <h2>Sessió 03. La cola que uneix la física clàssica
+      <span class="data">28/09/2026</span>
+    </h2>
+    <ul class="docs">
+      <li><a class="pdf" href="pdf/sessio_03_continguts.pdf">Continguts</a></li>
+      <li><a class="pdf" href="pdf/sessio_03_activitats.pdf">Activitats</a></li>
+    </ul>
+  </section>
 
-  <h2>Sessió 03 (28/09/2026) La cola que uneix la física clàssica</h2>
-  <ul class="docs">
-    <li><a class="pdf" href="pdf/sessio_03_continguts.pdf">Continguts</a></li>
-    <li><a class="pdf" href="pdf/sessio_03_activitats.pdf">Activitats</a></li>
-  </ul>
+  <section class="sessio">
+    <h2>Sessió 04. Els àtoms existeixen
+      <span class="data">05/10/2026</span>
+    </h2>
+    <ul class="docs">
+      <li><a class="pdf" href="pdf/sessio_04_continguts.pdf">Continguts</a></li>
+      <li><a class="pdf" href="pdf/sessio_04_activitats.pdf">Activitats</a></li>
+    </ul>
+  </section>
 
   <footer>
     Copyleft 2026 · Enrique Martínez Bueno · Textos sota llicència CC BY-SA 4.0<br>
-    Redacció i revisió lingüística assistides per intel·ligència artificial.<br>
+    Redacció i revisió lingüístiques assistides per intel·ligència artificial.<br>
     Imatges de Wikimedia Commons segons la llicència indicada en cada cas.
   </footer>
 </body>
