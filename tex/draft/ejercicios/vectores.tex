@@ -1,0 +1,1101 @@
+\section{Vectores: colección de ejercicios (3.º y 4.º ESO)}
+
+11 de octubre de 2026 · @Quique
+
+\subsection{Reglas del juego}
+
+Treinta ejercicios de cálculo con vectores: del 1 al 20 para 3.º ESO y del 21 al 30 para 4.º ESO. Aquí no se interpreta nada: cada apartado tiene una única respuesta y está en las soluciones del final. Se hacen todos los apartados, en orden, hasta que salgan sin pensar.
+
+Notación: los vectores se escriben con letra minúscula y sus coordenadas entre paréntesis, $\vec{u}=(3,-2)$. Los puntos van en mayúscula, $A(1,4)$. La forma $\vec{u}=3\vec{i}-2\vec{j}$ significa lo mismo que $\vec{u}=(3,-2)$. El módulo de $\vec{u}$ se escribe $|\vec{u}|$.
+
+\subsubsection*{Formulario}
+
+Para $\vec{u}=(u_1,u_2)$ y $\vec{v}=(v_1,v_2)$:
+
+\begin{description}
+    \item[Vector entre dos puntos.]
+    De $A(a_1,a_2)$ a $B(b_1,b_2)$:
+    \[
+    \overrightarrow{AB}=(b_1-a_1,b_2-a_2).
+    \]
+
+    \item[Módulo.]
+    \[
+    |\vec{u}|=\sqrt{u_1^2+u_2^2}.
+    \]
+
+    \item[Suma.]
+    \[
+    \vec{u}+\vec{v}=(u_1+v_1,u_2+v_2).
+    \]
+
+    \item[Resta.]
+    \[
+    \vec{u}-\vec{v}=(u_1-v_1,u_2-v_2).
+    \]
+
+    \item[Opuesto.]
+    \[
+    -\vec{u}=(-u_1,-u_2).
+    \]
+
+    \item[Producto por un número $k$.]
+    \[
+    k\vec{u}=(ku_1,ku_2).
+    \]
+
+    \item[Extremo de un vector.]
+    Conocidos $A$ y $\vec{v}=\overrightarrow{AB}$:
+    \[
+    B=A+\vec{v}.
+    \]
+
+    \item[Punto medio.]
+    \[
+    M=\left(\frac{a_1+b_1}{2},\frac{a_2+b_2}{2}\right).
+    \]
+
+    \item[Componentes desde módulo y ángulo (4.º).]
+    \[
+    \vec{u}=(|\vec{u}|\cos\alpha,|\vec{u}|\sin\alpha).
+    \]
+
+    \item[Ángulo desde componentes (4.º).]
+    \[
+    \tan\alpha=\frac{u_2}{u_1},
+    \qquad \text{mirando el cuadrante}.
+    \]
+
+    \item[Vector unitario (4.º).]
+    \[
+    \frac{\vec{u}}{|\vec{u}|}.
+    \]
+
+    \item[Producto escalar (4.º).]
+    \[
+    \vec{u}\cdot\vec{v}
+    =u_1v_1+u_2v_2
+    =|\vec{u}|\,|\vec{v}|\cos\theta.
+    \]
+
+    \item[Perpendiculares (4.º).]
+    \[
+    \vec{u}\cdot\vec{v}=0.
+    \]
+
+    \item[Paralelos (4.º).]
+    \[
+    \frac{u_1}{v_1}=\frac{u_2}{v_2}.
+    \]
+\end{description}
+
+Los ángulos se miden desde el semieje $X$ positivo, en sentido antihorario. Resultados con raíz: se da la raíz exacta y el valor con dos decimales. Los decimales se escriben con punto ($0.5$) para no confundirlos con la coma que separa las coordenadas.
+
+\subsection{3.º ESO: ejercicios 1--10}
+
+\subsubsection*{Ejercicio 1. Notación}
+
+Escribe los apartados a)--d) en la forma $x\vec{i}+y\vec{j}$ y los apartados e)--h) en coordenadas.
+
+\begin{enumerate}
+    \item[a)] $\vec{u}=(4,-3)$.
+    \item[b)] $\vec{u}=(-2,5)$.
+    \item[c)] $\vec{u}=(0,7)$.
+    \item[d)] $\vec{u}=(-6,0)$.
+    \item[e)] $\vec{u}=5\vec{i}+2\vec{j}$.
+    \item[f)] $\vec{u}=-\vec{i}-8\vec{j}$.
+    \item[g)] $\vec{u}=3\vec{j}$.
+    \item[h)] $\vec{u}=-4\vec{i}$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 2. Vector entre dos puntos}
+
+Calcula las coordenadas del vector $\overrightarrow{AB}$.
+
+\begin{enumerate}
+    \item[a)] $A(1,2)$, $B(4,6)$.
+    \item[b)] $A(-3,5)$, $B(2,-1)$.
+    \item[c)] $A(0,0)$, $B(-4,7)$.
+    \item[d)] $A(6,-2)$, $B(6,3)$.
+    \item[e)] $A(-5,-5)$, $B(-1,-8)$.
+    \item[f)] $A(2,9)$, $B(-7,9)$.
+    \item[g)] $A(-1,4)$, $B(3,-4)$.
+    \item[h)] $A(10,-6)$, $B(-2,-1)$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 3. Módulo}
+
+Calcula el módulo de cada vector.
+
+\begin{enumerate}
+    \item[a)] $\vec{u}=(3,4)$.
+    \item[b)] $\vec{u}=(6,-8)$.
+    \item[c)] $\vec{u}=(-5,12)$.
+    \item[d)] $\vec{u}=(1,1)$.
+    \item[e)] $\vec{u}=(2,-3)$.
+    \item[f)] $\vec{u}=(0,-9)$.
+    \item[g)] $\vec{u}=(-7,0)$.
+    \item[h)] $\vec{u}=(4,6)$.
+    \item[i)] $\vec{u}=(-8,15)$.
+    \item[j)] $\vec{u}=(-1,-2)$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 4. Distancia entre dos puntos}
+
+Calcula el vector $\overrightarrow{PQ}$ y después la distancia entre $P$ y $Q$, que es $|\overrightarrow{PQ}|$.
+
+\begin{enumerate}
+    \item[a)] $P(1,1)$, $Q(4,5)$.
+    \item[b)] $P(-2,3)$, $Q(4,-5)$.
+    \item[c)] $P(0,-3)$, $Q(5,9)$.
+    \item[d)] $P(2,2)$, $Q(-1,-2)$.
+    \item[e)] $P(-4,1)$, $Q(1,3)$.
+    \item[f)] $P(7,-1)$, $Q(7,-10)$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 5. Suma de dos vectores}
+
+Calcula $\vec{u}+\vec{v}$.
+
+\begin{enumerate}
+    \item[a)] $\vec{u}=(2,3)$, $\vec{v}=(4,1)$.
+    \item[b)] $\vec{u}=(-5,2)$, $\vec{v}=(3,-7)$.
+    \item[c)] $\vec{u}=(0,6)$, $\vec{v}=(-4,-6)$.
+    \item[d)] $\vec{u}=(8,-3)$, $\vec{v}=(-8,3)$.
+    \item[e)] $\vec{u}=(1/2,3)$, $\vec{v}=(5/2,-1)$.
+    \item[f)] $\vec{u}=(-3,-4)$, $\vec{v}=(-6,-2)$.
+    \item[g)] $\vec{u}=(10,0)$, $\vec{v}=(0,-10)$.
+    \item[h)] $\vec{u}=(-7,5)$, $\vec{v}=(2,9)$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 6. Suma de varios vectores}
+
+Calcula la suma.
+
+\begin{enumerate}
+    \item[a)] $(1,2)+(3,-1)+(-2,4)$.
+    \item[b)] $(-5,3)+(2,2)+(4,-6)+(1,1)$.
+    \item[c)] $(6,-2)+(-3,-3)+(0,7)+(-4,1)+(2,-2)$.
+    \item[d)] $(10,4)+(-7,-1)+(-3,-3)$.
+    \item[e)] $(-2,-2)+(-2,-2)+(-2,-2)+(5,1)$.
+    \item[f)] $(1,0)+(0,1)+(-1,0)+(0,-1)+(3,3)+(-1,2)$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 7. Resta}
+
+Calcula $\vec{u}-\vec{v}$.
+
+\begin{enumerate}
+    \item[a)] $\vec{u}=(5,7)$, $\vec{v}=(2,3)$.
+    \item[b)] $\vec{u}=(-3,4)$, $\vec{v}=(5,-2)$.
+    \item[c)] $\vec{u}=(0,0)$, $\vec{v}=(6,-1)$.
+    \item[d)] $\vec{u}=(4,-8)$, $\vec{v}=(4,-8)$.
+    \item[e)] $\vec{u}=(-1,-6)$, $\vec{v}=(-7,2)$.
+    \item[f)] $\vec{u}=(9,2)$, $\vec{v}=(-3,-3)$.
+    \item[g)] $\vec{u}=(2,5)$, $\vec{v}=(5,2)$.
+    \item[h)] $\vec{u}=(5,2)$, $\vec{v}=(2,5)$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 8. Vector opuesto}
+
+Escribe $-\vec{v}$ y calcula $\vec{v}+(-\vec{v})$.
+
+\begin{enumerate}
+    \item[a)] $\vec{v}=(3,-7)$.
+    \item[b)] $\vec{v}=(-4,-1)$.
+    \item[c)] $\vec{v}=(0,5)$.
+    \item[d)] $\vec{v}=(-6,0)$.
+    \item[e)] $\vec{v}=2\vec{i}-9\vec{j}$.
+    \item[f)] $\vec{v}=-\vec{i}+\vec{j}$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 9. Producto por un número}
+
+Calcula $k\vec{v}$.
+
+\begin{enumerate}
+    \item[a)] $k=3$, $\vec{v}=(2,-5)$.
+    \item[b)] $k=-2$, $\vec{v}=(4,1)$.
+    \item[c)] $k=1/2$, $\vec{v}=(6,-10)$.
+    \item[d)] $k=0$, $\vec{v}=(7,3)$.
+    \item[e)] $k=-1$, $\vec{v}=(-3,8)$.
+    \item[f)] $k=5$, $\vec{v}=(-1,-2)$.
+    \item[g)] $k=-3/4$, $\vec{v}=(8,-12)$.
+    \item[h)] $k=10$, $\vec{v}=(0.3,-0.7)$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 10. Combinaciones}
+
+Con $\vec{u}=(2,-1)$, $\vec{v}=(-3,4)$ y $\vec{w}=(1,5)$, calcula:
+
+\begin{enumerate}
+    \item[a)] $\vec{u}+\vec{v}+\vec{w}$.
+    \item[b)] $\vec{u}-\vec{v}$.
+    \item[c)] $2\vec{u}+\vec{v}$.
+    \item[d)] $3\vec{u}-2\vec{w}$.
+    \item[e)] $\vec{u}-\vec{v}-\vec{w}$.
+    \item[f)] $2\vec{u}+3\vec{v}-\vec{w}$.
+    \item[g)] $-\vec{u}+4\vec{w}$.
+    \item[h)] $\frac{1}{2}(\vec{u}+\vec{v})$.
+    \item[i)] $5\vec{u}-2\vec{v}+3\vec{w}$.
+    \item[j)] $-(\vec{u}-\vec{w})+2\vec{v}$.
+\end{enumerate}
+
+\subsection{3.º ESO: ejercicios 11--20}
+
+\subsubsection*{Ejercicio 11. Propiedades del producto por un número}
+
+Calcula las dos expresiones de cada apartado.
+
+\begin{enumerate}
+    \item[a)] $k=3$, $\vec{u}=(2,1)$, $\vec{v}=(-1,4)$:
+    calcula $k(\vec{u}+\vec{v})$ y $k\vec{u}+k\vec{v}$.
+
+    \item[b)] $k=-2$, $\vec{u}=(5,-3)$, $\vec{v}=(1,1)$:
+    calcula $k(\vec{u}+\vec{v})$ y $k\vec{u}+k\vec{v}$.
+
+    \item[c)] $k=1/2$, $\vec{u}=(4,-6)$, $\vec{v}=(2,8)$:
+    calcula $k(\vec{u}+\vec{v})$ y $k\vec{u}+k\vec{v}$.
+
+    \item[d)] $a=2$, $b=5$, $\vec{u}=(1,-3)$:
+    calcula $(a+b)\vec{u}$ y $a\vec{u}+b\vec{u}$.
+
+    \item[e)] $a=-3$, $b=1$, $\vec{u}=(4,2)$:
+    calcula $(a+b)\vec{u}$ y $a\vec{u}+b\vec{u}$.
+
+    \item[f)] $a=2$, $b=3$, $\vec{u}=(1,-2)$:
+    calcula $a(b\vec{u})$ y $(ab)\vec{u}$.
+
+    \item[g)] $a=-4$, $b=1/2$, $\vec{u}=(6,5)$:
+    calcula $a(b\vec{u})$ y $(ab)\vec{u}$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 12. Propiedades de la suma y la resta}
+
+Calcula las dos expresiones de cada apartado.
+
+\begin{enumerate}
+    \item[a)] $\vec{u}=(3,-2)$, $\vec{v}=(-5,4)$:
+    calcula $\vec{u}+\vec{v}$ y $\vec{v}+\vec{u}$.
+
+    \item[b)] $\vec{u}=(-1,6)$, $\vec{v}=(7,0)$:
+    calcula $\vec{u}+\vec{v}$ y $\vec{v}+\vec{u}$.
+
+    \item[c)] $\vec{u}=(1,2)$, $\vec{v}=(3,-4)$, $\vec{w}=(-2,5)$:
+    calcula $(\vec{u}+\vec{v})+\vec{w}$ y $\vec{u}+(\vec{v}+\vec{w})$.
+
+    \item[d)] $\vec{u}=(-6,1)$, $\vec{v}=(2,2)$, $\vec{w}=(4,-7)$:
+    calcula $(\vec{u}+\vec{v})+\vec{w}$ y $\vec{u}+(\vec{v}+\vec{w})$.
+
+    \item[e)] $\vec{u}=(4,1)$, $\vec{v}=(-2,3)$:
+    calcula $\vec{u}-\vec{v}$ y $\vec{v}-\vec{u}$.
+
+    \item[f)] $\vec{u}=(0,-5)$, $\vec{v}=(6,2)$:
+    calcula $\vec{u}-\vec{v}$ y $\vec{v}-\vec{u}$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 13. Extremo de un vector}
+
+Conocidos el origen $A$ y el vector $\vec{v}=\overrightarrow{AB}$, calcula el extremo $B$.
+
+\begin{enumerate}
+    \item[a)] $A(1,3)$, $\vec{v}=(4,2)$.
+    \item[b)] $A(-2,5)$, $\vec{v}=(3,-7)$.
+    \item[c)] $A(0,0)$, $\vec{v}=(-6,1)$.
+    \item[d)] $A(4,-4)$, $\vec{v}=(-4,4)$.
+    \item[e)] $A(-3,-1)$, $\vec{v}=(0,8)$.
+    \item[f)] $A(7,2)$, $\vec{v}=(-10,-5)$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 14. Origen de un vector}
+
+Conocidos el extremo $B$ y el vector $\vec{v}=\overrightarrow{AB}$, calcula el origen $A=B-\vec{v}$.
+
+\begin{enumerate}
+    \item[a)] $B(5,5)$, $\vec{v}=(2,3)$.
+    \item[b)] $B(0,4)$, $\vec{v}=(-3,1)$.
+    \item[c)] $B(-2,-6)$, $\vec{v}=(4,-2)$.
+    \item[d)] $B(8,0)$, $\vec{v}=(8,0)$.
+    \item[e)] $B(1,-1)$, $\vec{v}=(-5,-5)$.
+    \item[f)] $B(-7,3)$, $\vec{v}=(2,-9)$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 15. Punto medio}
+
+Calcula lo que se pide.
+
+\begin{enumerate}
+    \item[a)] Punto medio de $A(2,4)$ y $B(6,8)$.
+    \item[b)] Punto medio de $A(-3,1)$ y $B(5,7)$.
+    \item[c)] Punto medio de $A(0,-4)$ y $B(-6,10)$.
+    \item[d)] Punto medio de $A(1,1)$ y $B(4,6)$.
+    \item[e)] Punto medio de $A(-5,-2)$ y $B(-1,-9)$.
+    \item[f)] Punto medio de $A(7,3)$ y $B(-7,-3)$.
+    \item[g)] $M(3,5)$ es el punto medio de $AB$ y $A(1,2)$.
+    Calcula $B=2M-A$.
+    \item[h)] $M(0,0)$ es el punto medio de $AB$ y $A(-2,4)$.
+    Calcula $B=2M-A$.
+    \item[i)] $M(2,3)$ es el punto medio de $AB$ y $A(6,-1)$.
+    Calcula $B=2M-A$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 16. Vectores iguales}
+
+Calcula $\overrightarrow{AB}$ y $\overrightarrow{CD}$. Responde sí o no:
+¿$\overrightarrow{AB}=\overrightarrow{CD}$?
+
+\begin{enumerate}
+    \item[a)] $A(1,1)$, $B(3,4)$, $C(5,2)$, $D(7,5)$.
+    \item[b)] $A(0,2)$, $B(4,0)$, $C(-1,-1)$, $D(3,-4)$.
+    \item[c)] $A(-3,5)$, $B(-1,1)$, $C(2,2)$, $D(4,-2)$.
+    \item[d)] $A(6,0)$, $B(2,3)$, $C(0,0)$, $D(4,-3)$.
+    \item[e)] $A(-2,-2)$, $B(5,-1)$, $C(1,7)$, $D(8,8)$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 17. Cuarto vértice de un paralelogramo}
+
+$ABCD$ es un paralelogramo, así que
+$\overrightarrow{AB}=\overrightarrow{DC}$.
+Calcula $\overrightarrow{AB}$ y después $D=C-\overrightarrow{AB}$.
+
+\begin{enumerate}
+    \item[a)] $A(0,0)$, $B(4,0)$, $C(5,3)$.
+    \item[b)] $A(1,2)$, $B(5,3)$, $C(6,7)$.
+    \item[c)] $A(-2,1)$, $B(3,-1)$, $C(4,4)$.
+    \item[d)] $A(-4,-3)$, $B(0,-5)$, $C(2,2)$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 18. Ecuaciones con vectores}
+
+Halla el vector $\vec{x}$. Se despeja igual que con números.
+
+\begin{enumerate}
+    \item[a)] $\vec{x}+(3,-2)=(5,4)$.
+    \item[b)] $\vec{x}-(1,7)=(-4,2)$.
+    \item[c)] $2\vec{x}=(8,-6)$.
+    \item[d)] $3\vec{x}+(1,2)=(10,-4)$.
+    \item[e)] $-\vec{x}+(5,5)=(2,-1)$.
+    \item[f)] $2\vec{x}-(4,1)=\vec{x}+(-3,6)$.
+    \item[g)] $4\vec{x}+(2,-2)=2\vec{x}+(8,6)$.
+    \item[h)] $\frac{1}{2}\vec{x}+(1,1)=(3,-2)$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 19. Posición y desplazamiento}
+
+Un móvil pasa, en este orden, por las posiciones $P_0$, $P_1$, $P_2$ y $P_3$ (en metros). Para cada recorrido calcula: los desplazamientos de cada tramo
+$\Delta\vec{r}_1=P_1-P_0$,
+$\Delta\vec{r}_2=P_2-P_1$ y
+$\Delta\vec{r}_3=P_3-P_2$;
+el módulo de cada uno; el desplazamiento total
+$\Delta\vec{r}=P_3-P_0$ y su módulo; comprueba que
+$\Delta\vec{r}_1+\Delta\vec{r}_2+\Delta\vec{r}_3=\Delta\vec{r}$;
+y suma los módulos de los tres tramos.
+
+\begin{enumerate}
+    \item[a)] $P_0(0,0)$, $P_1(4,3)$, $P_2(4,7)$, $P_3(-2,7)$.
+    \item[b)] $P_0(2,-1)$, $P_1(8,-1)$, $P_2(8,7)$, $P_3(2,-1)$.
+    \item[c)] $P_0(-3,-4)$, $P_1(0,0)$, $P_2(5,12)$, $P_3(-1,4)$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 20. Fuerzas}
+
+Todas las fuerzas están en newtons. Calcula la resultante $\vec{R}$ (la suma de todas), su módulo $|\vec{R}|$ y la fuerza que hay que añadir para que la suma total sea $(0,0)$, que es $-\vec{R}$.
+
+\begin{enumerate}
+    \item[a)] $\vec{F}_1=(3,0)$, $\vec{F}_2=(0,4)$.
+    \item[b)] $\vec{F}_1=(5,-2)$, $\vec{F}_2=(-1,6)$, $\vec{F}_3=(2,-1)$.
+    \item[c)] $\vec{F}_1=(10,0)$, $\vec{F}_2=(-4,3)$, $\vec{F}_3=(-6,-3)$.
+    \item[d)] $\vec{F}_1=(-8,6)$, $\vec{F}_2=(2,2)$,
+    $\vec{F}_3=(0,-5)$, $\vec{F}_4=(1,-3)$.
+    \item[e)] $\vec{F}_1=(12,5)$, $\vec{F}_2=(-12,-5)$.
+    \item[f)] $\vec{F}_1=(7,1)$, $\vec{F}_2=(-2,3)$,
+    $\vec{F}_3=(-5,4)$, $\vec{F}_4=(3,-2)$, $\vec{F}_5=(1,2)$.
+\end{enumerate}
+
+\subsection{4.º ESO: ejercicios 21--30}
+
+\subsubsection*{Ejercicio 21. Componentes a partir del módulo y el ángulo}
+
+En los apartados a)--l) calcula las componentes de
+$\vec{u}=(|\vec{u}|\cos\alpha,|\vec{u}|\sin\alpha)$.
+Los apartados m)--p) son la misma operación aplicada al peso de un cuerpo apoyado en un plano inclinado.
+
+\begin{enumerate}
+    \item[a)] $|\vec{u}|=10$, $\alpha=0^\circ$.
+    \item[b)] $|\vec{u}|=10$, $\alpha=90^\circ$.
+    \item[c)] $|\vec{u}|=8$, $\alpha=180^\circ$.
+    \item[d)] $|\vec{u}|=6$, $\alpha=270^\circ$.
+    \item[e)] $|\vec{u}|=10$, $\alpha=30^\circ$.
+    \item[f)] $|\vec{u}|=4$, $\alpha=60^\circ$.
+    \item[g)] $|\vec{u}|=6$, $\alpha=45^\circ$.
+    \item[h)] $|\vec{u}|=20$, $\alpha=120^\circ$.
+    \item[i)] $|\vec{u}|=12$, $\alpha=150^\circ$.
+    \item[j)] $|\vec{u}|=10$, $\alpha=210^\circ$.
+    \item[k)] $|\vec{u}|=8$, $\alpha=300^\circ$.
+    \item[l)] $|\vec{u}|=25$, $\alpha=37^\circ$.
+    \item[m)] Peso $P=100\,\mathrm{N}$ en un plano inclinado de $30^\circ$:
+    calcula $P_{\parallel}=P\sin\alpha$ y $P_{\perp}=P\cos\alpha$.
+    \item[n)] Peso $P=50\,\mathrm{N}$ en un plano inclinado de $45^\circ$:
+    calcula $P_{\parallel}=P\sin\alpha$ y $P_{\perp}=P\cos\alpha$.
+    \item[o)] Peso $P=200\,\mathrm{N}$ en un plano inclinado de $60^\circ$:
+    calcula $P_{\parallel}=P\sin\alpha$ y $P_{\perp}=P\cos\alpha$.
+    \item[p)] Peso $P=80\,\mathrm{N}$ en un plano inclinado de $37^\circ$:
+    calcula $P_{\parallel}=P\sin\alpha$ y $P_{\perp}=P\cos\alpha$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 22. Módulo y ángulo a partir de las componentes}
+
+Calcula $|\vec{u}|$ y el ángulo $\alpha$ que forma con el semieje $X$ positivo (entre $0^\circ$ y $360^\circ$). Primero mira en qué cuadrante está el vector.
+
+\begin{enumerate}
+    \item[a)] $\vec{u}=(5,5)$.
+    \item[b)] $\vec{u}=(0,6)$.
+    \item[c)] $\vec{u}=(-4,0)$.
+    \item[d)] $\vec{u}=(3,4)$.
+    \item[e)] $\vec{u}=(-3,4)$.
+    \item[f)] $\vec{u}=(-6,-8)$.
+    \item[g)] $\vec{u}=(5,-12)$.
+    \item[h)] $\vec{u}=(1,-1)$.
+    \item[i)] $\vec{u}=(-2,-2)$.
+    \item[j)] $\vec{u}=(-8,15)$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 23. Vector unitario}
+
+Calcula el vector unitario $\vec{u}/|\vec{u}|$ y comprueba que su módulo es $1$.
+
+\begin{enumerate}
+    \item[a)] $\vec{u}=(3,4)$.
+    \item[b)] $\vec{u}=(0,-7)$.
+    \item[c)] $\vec{u}=(-5,12)$.
+    \item[d)] $\vec{u}=(1,1)$.
+    \item[e)] $\vec{u}=(6,-8)$.
+    \item[f)] $\vec{u}=(2,-1)$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 24. Vector de módulo dado}
+
+Calcula el vector $\vec{w}$ con el módulo indicado, con la dirección de $\vec{v}$ y el sentido que se pide:
+\[
+\vec{w}=\mbox{módulo}\cdot\frac{\vec{v}}{|\vec{v}|},
+\]
+con un signo menos si el sentido es contrario.
+
+\begin{enumerate}
+    \item[a)] Módulo $10$, mismo sentido que $\vec{v}=(3,4)$.
+    \item[b)] Módulo $26$, mismo sentido que $\vec{v}=(5,-12)$.
+    \item[c)] Módulo $3$, mismo sentido que $\vec{v}=(0,-2)$.
+    \item[d)] Módulo $15$, mismo sentido que $\vec{v}=(-4,3)$.
+    \item[e)] Módulo $5$, sentido contrario a $\vec{v}=(6,8)$.
+    \item[f)] Módulo $4\sqrt{2}$, mismo sentido que $\vec{v}=(1,1)$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 25. Resultante de fuerzas dadas por módulo y ángulo}
+
+Pasa cada fuerza a componentes, súmalas para obtener $\vec{R}$, y calcula $|\vec{R}|$ y su ángulo con el semieje $X$ positivo.
+
+\begin{enumerate}
+    \item[a)] $F_1=10\,\mathrm{N}$ a $0^\circ$,
+    $F_2=10\,\mathrm{N}$ a $90^\circ$.
+
+    \item[b)] $F_1=20\,\mathrm{N}$ a $0^\circ$,
+    $F_2=20\,\mathrm{N}$ a $120^\circ$.
+
+    \item[c)] $F_1=8\,\mathrm{N}$ a $30^\circ$,
+    $F_2=6\,\mathrm{N}$ a $120^\circ$.
+
+    \item[d)] $F_1=50\,\mathrm{N}$ a $0^\circ$,
+    $F_2=30\,\mathrm{N}$ a $90^\circ$,
+    $F_3=40\,\mathrm{N}$ a $180^\circ$,
+    $F_4=30\,\mathrm{N}$ a $270^\circ$.
+
+    \item[e)] $F_1=12\,\mathrm{N}$ a $45^\circ$,
+    $F_2=12\,\mathrm{N}$ a $135^\circ$,
+    $F_3=10\,\mathrm{N}$ a $270^\circ$.
+
+    \item[f)] $F_1=15\,\mathrm{N}$ a $0^\circ$,
+    $F_2=10\,\mathrm{N}$ a $60^\circ$,
+    $F_3=10\,\mathrm{N}$ a $300^\circ$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 26. Producto escalar con componentes}
+
+Calcula $\vec{u}\cdot\vec{v}=u_1v_1+u_2v_2$. El resultado es un número, no un vector.
+
+\begin{enumerate}
+    \item[a)] $\vec{u}=(2,3)$, $\vec{v}=(4,1)$.
+    \item[b)] $\vec{u}=(-1,5)$, $\vec{v}=(3,2)$.
+    \item[c)] $\vec{u}=(6,-2)$, $\vec{v}=(1,3)$.
+    \item[d)] $\vec{u}=(0,4)$, $\vec{v}=(7,-5)$.
+    \item[e)] $\vec{u}=(-3,-4)$, $\vec{v}=(-3,-4)$.
+    \item[f)] $\vec{u}=(1/2,2)$, $\vec{v}=(4,-1)$.
+    \item[g)] $\vec{u}=(5,0)$, $\vec{v}=(0,9)$.
+    \item[h)] $\vec{u}=(-2,7)$, $\vec{v}=(3,-1)$.
+    \item[i)] $\vec{u}=(8,-6)$, $\vec{v}=(-3,4)$.
+    \item[j)] $\vec{u}=(10,1)$, $\vec{v}=(1,10)$.
+    \item[k)] Con $\vec{u}=(1,2)$, $\vec{v}=(3,-1)$,
+    $\vec{w}=(-2,4)$: calcula
+    $\vec{u}\cdot(\vec{v}+\vec{w})$ y
+    $\vec{u}\cdot\vec{v}+\vec{u}\cdot\vec{w}$.
+    \item[l)] Con los mismos vectores: calcula
+    $(2\vec{u})\cdot\vec{v}$ y $2(\vec{u}\cdot\vec{v})$.
+    \item[m)] Con los mismos vectores: calcula
+    $\vec{u}\cdot\vec{u}$ y $|\vec{u}|^2$.
+    \item[n)] Con los mismos vectores: calcula
+    $(\vec{u}+\vec{v})\cdot(\vec{u}-\vec{v})$ y
+    $|\vec{u}|^2-|\vec{v}|^2$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 27. Producto escalar con módulos y ángulo}
+
+Calcula $\vec{u}\cdot\vec{v}=|\vec{u}|\,|\vec{v}|\cos\theta$.
+
+\begin{enumerate}
+    \item[a)] $|\vec{u}|=4$, $|\vec{v}|=5$, $\theta=0^\circ$.
+    \item[b)] $|\vec{u}|=3$, $|\vec{v}|=6$, $\theta=60^\circ$.
+    \item[c)] $|\vec{u}|=2$, $|\vec{v}|=8$, $\theta=90^\circ$.
+    \item[d)] $|\vec{u}|=5$, $|\vec{v}|=4$, $\theta=180^\circ$.
+    \item[e)] $|\vec{u}|=10$, $|\vec{v}|=3$, $\theta=120^\circ$.
+    \item[f)] $|\vec{u}|=4$, $|\vec{v}|=6$, $\theta=45^\circ$.
+    \item[g)] $|\vec{u}|=2$, $|\vec{v}|=2$, $\theta=150^\circ$.
+    \item[h)] $|\vec{u}|=7$, $|\vec{v}|=3$, $\theta=30^\circ$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 28. Ángulo entre dos vectores}
+
+Calcula $\vec{u}\cdot\vec{v}$, $|\vec{u}|$ y $|\vec{v}|$, después
+\[
+\cos\theta=\frac{\vec{u}\cdot\vec{v}}{|\vec{u}|\,|\vec{v}|}
+\]
+y por último $\theta$.
+
+\begin{enumerate}
+    \item[a)] $\vec{u}=(1,0)$, $\vec{v}=(0,1)$.
+    \item[b)] $\vec{u}=(1,1)$, $\vec{v}=(1,0)$.
+    \item[c)] $\vec{u}=(3,4)$, $\vec{v}=(4,3)$.
+    \item[d)] $\vec{u}=(1,2)$, $\vec{v}=(-2,-4)$.
+    \item[e)] $\vec{u}=(5,0)$, $\vec{v}=(-3,4)$.
+    \item[f)] $\vec{u}=(1,3)$, $\vec{v}=(2,1)$.
+    \item[g)] $\vec{u}=(-1,-1)$, $\vec{v}=(1,0)$.
+    \item[h)] $\vec{u}=(2,1)$, $\vec{v}=(-1,3)$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 29. Perpendiculares y paralelos}
+
+Perpendiculares: $\vec{u}\cdot\vec{v}=0$.
+Paralelos: $u_1/v_1=u_2/v_2$ (o, sin dividir, $u_1v_2-u_2v_1=0$).
+
+\begin{enumerate}
+    \item[a)] Halla $k$ para que $(2,k)$ y $(3,6)$ sean perpendiculares.
+    \item[b)] Halla $k$ para que $(k,4)$ y $(2,-1)$ sean perpendiculares.
+    \item[c)] Halla $k$ para que $(3,-2)$ y $(k,6)$ sean perpendiculares.
+    \item[d)] Halla los dos valores de $k$ para que $(k,3)$ y $(k,-12)$ sean perpendiculares.
+    \item[e)] Halla $k$ para que $(1,2k)$ y $(4,-1)$ sean perpendiculares.
+    \item[f)] Halla $k$ para que $(2,3)$ y $(k,9)$ sean paralelos.
+    \item[g)] Halla $k$ para que $(k,-4)$ y $(3,6)$ sean paralelos.
+    \item[h)] Halla $k$ para que $(5,k)$ y $(-10,4)$ sean paralelos.
+    \item[i)] Halla los dos valores de $k$ para que $(k,2)$ y $(8,k)$ sean paralelos.
+    \item[j)] ¿$(4,-6)$ y $(-2,3)$ son perpendiculares, paralelos o ninguna de las dos?
+    \item[k)] ¿$(3,5)$ y $(5,-3)$ son perpendiculares, paralelos o ninguna de las dos?
+    \item[l)] ¿$(1,2)$ y $(2,3)$ son perpendiculares, paralelos o ninguna de las dos?
+    \item[m)] ¿$(6,0)$ y $(0,-2)$ son perpendiculares, paralelos o ninguna de las dos?
+    \item[n)] Halla los dos vectores unitarios perpendiculares a $(3,4)$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 30. Trabajo de una fuerza}
+
+El trabajo es el producto escalar $W=\vec{F}\cdot\Delta\vec{r}$, en julios ($\mathrm{J}$) si $\vec{F}$ va en $\mathrm{N}$ y $\Delta\vec{r}$ en $\mathrm{m}$.
+En a)--f) usa componentes; en g)--l) usa
+$W=|\vec{F}|\,|\Delta\vec{r}|\cos\theta$;
+en m)--o) calcula primero $\Delta\vec{r}$ y después usa componentes.
+
+\begin{enumerate}
+    \item[a)] $\vec{F}=(10,0)\,\mathrm{N}$,
+    $\Delta\vec{r}=(5,0)\,\mathrm{m}$.
+    \item[b)] $\vec{F}=(3,4)\,\mathrm{N}$,
+    $\Delta\vec{r}=(6,0)\,\mathrm{m}$.
+    \item[c)] $\vec{F}=(0,-20)\,\mathrm{N}$,
+    $\Delta\vec{r}=(8,0)\,\mathrm{m}$.
+    \item[d)] $\vec{F}=(-5,2)\,\mathrm{N}$,
+    $\Delta\vec{r}=(4,3)\,\mathrm{m}$.
+    \item[e)] $\vec{F}=(12,-5)\,\mathrm{N}$,
+    $\Delta\vec{r}=(2,-6)\,\mathrm{m}$.
+    \item[f)] $\vec{F}=(7,7)\,\mathrm{N}$,
+    $\Delta\vec{r}=(-3,3)\,\mathrm{m}$.
+    \item[g)] $|\vec{F}|=50\,\mathrm{N}$,
+    $|\Delta\vec{r}|=10\,\mathrm{m}$, $\theta=0^\circ$.
+    \item[h)] $|\vec{F}|=50\,\mathrm{N}$,
+    $|\Delta\vec{r}|=10\,\mathrm{m}$, $\theta=60^\circ$.
+    \item[i)] $|\vec{F}|=100\,\mathrm{N}$,
+    $|\Delta\vec{r}|=4\,\mathrm{m}$, $\theta=90^\circ$.
+    \item[j)] $|\vec{F}|=30\,\mathrm{N}$,
+    $|\Delta\vec{r}|=5\,\mathrm{m}$, $\theta=180^\circ$.
+    \item[k)] $|\vec{F}|=40\,\mathrm{N}$,
+    $|\Delta\vec{r}|=20\,\mathrm{m}$, $\theta=37^\circ$.
+    \item[l)] $|\vec{F}|=80\,\mathrm{N}$,
+    $|\Delta\vec{r}|=2.5\,\mathrm{m}$, $\theta=45^\circ$.
+    \item[m)] $\vec{F}=(4,-2)\,\mathrm{N}$ y el cuerpo va de
+    $A(1,1)$ a $B(6,4)$ (en $\mathrm{m}$).
+    \item[n)] $\vec{F}=(-3,5)\,\mathrm{N}$ y el cuerpo va de
+    $A(0,2)$ a $B(-4,-1)$ (en $\mathrm{m}$).
+    \item[o)] $\vec{F}=(10,10)\,\mathrm{N}$ y el cuerpo va de
+    $A(-2,3)$ a $B(3,-2)$ (en $\mathrm{m}$).
+\end{enumerate}
+
+\subsection{Soluciones de 3.º ESO}
+
+\subsubsection*{1. Notación}
+\begin{enumerate}
+    \item[a)] $4\vec{i}-3\vec{j}$.
+    \item[b)] $-2\vec{i}+5\vec{j}$.
+    \item[c)] $7\vec{j}$.
+    \item[d)] $-6\vec{i}$.
+    \item[e)] $(5,2)$.
+    \item[f)] $(-1,-8)$.
+    \item[g)] $(0,3)$.
+    \item[h)] $(-4,0)$.
+\end{enumerate}
+
+\subsubsection*{2. Vector entre dos puntos}
+\begin{enumerate}
+    \item[a)] $(3,4)$.
+    \item[b)] $(5,-6)$.
+    \item[c)] $(-4,7)$.
+    \item[d)] $(0,5)$.
+    \item[e)] $(4,-3)$.
+    \item[f)] $(-9,0)$.
+    \item[g)] $(4,-8)$.
+    \item[h)] $(-12,5)$.
+\end{enumerate}
+
+\subsubsection*{3. Módulo}
+\begin{enumerate}
+    \item[a)] $5$.
+    \item[b)] $10$.
+    \item[c)] $13$.
+    \item[d)] $\sqrt{2}\approx1.41$.
+    \item[e)] $\sqrt{13}\approx3.61$.
+    \item[f)] $9$.
+    \item[g)] $7$.
+    \item[h)] $2\sqrt{13}\approx7.21$.
+    \item[i)] $17$.
+    \item[j)] $\sqrt{5}\approx2.24$.
+\end{enumerate}
+
+\subsubsection*{4. Distancia entre dos puntos}
+\begin{enumerate}
+    \item[a)] $\overrightarrow{PQ}=(3,4)$, $d=5$.
+    \item[b)] $\overrightarrow{PQ}=(6,-8)$, $d=10$.
+    \item[c)] $\overrightarrow{PQ}=(5,12)$, $d=13$.
+    \item[d)] $\overrightarrow{PQ}=(-3,-4)$, $d=5$.
+    \item[e)] $\overrightarrow{PQ}=(5,2)$, $d=\sqrt{29}\approx5.39$.
+    \item[f)] $\overrightarrow{PQ}=(0,-9)$, $d=9$.
+\end{enumerate}
+
+\subsubsection*{5. Suma de dos vectores}
+\begin{enumerate}
+    \item[a)] $(6,4)$.
+    \item[b)] $(-2,-5)$.
+    \item[c)] $(-4,0)$.
+    \item[d)] $(0,0)$.
+    \item[e)] $(3,2)$.
+    \item[f)] $(-9,-6)$.
+    \item[g)] $(10,-10)$.
+    \item[h)] $(-5,14)$.
+\end{enumerate}
+
+\subsubsection*{6. Suma de varios vectores}
+\begin{enumerate}
+    \item[a)] $(2,5)$.
+    \item[b)] $(2,0)$.
+    \item[c)] $(1,1)$.
+    \item[d)] $(0,0)$.
+    \item[e)] $(-1,-5)$.
+    \item[f)] $(2,5)$.
+\end{enumerate}
+
+\subsubsection*{7. Resta}
+\begin{enumerate}
+    \item[a)] $(3,4)$.
+    \item[b)] $(-8,6)$.
+    \item[c)] $(-6,1)$.
+    \item[d)] $(0,0)$.
+    \item[e)] $(6,-8)$.
+    \item[f)] $(12,5)$.
+    \item[g)] $(-3,3)$.
+    \item[h)] $(3,-3)$.
+\end{enumerate}
+
+\subsubsection*{8. Vector opuesto}
+\begin{enumerate}
+    \item[a)] $-\vec{v}=(-3,7)$.
+    \item[b)] $-\vec{v}=(4,1)$.
+    \item[c)] $-\vec{v}=(0,-5)$.
+    \item[d)] $-\vec{v}=(6,0)$.
+    \item[e)] $-\vec{v}=(-2,9)$.
+    \item[f)] $-\vec{v}=(1,-1)$.
+\end{enumerate}
+En todos, $\vec{v}+(-\vec{v})=(0,0)$.
+
+\subsubsection*{9. Producto por un número}
+\begin{enumerate}
+    \item[a)] $(6,-15)$.
+    \item[b)] $(-8,-2)$.
+    \item[c)] $(3,-5)$.
+    \item[d)] $(0,0)$.
+    \item[e)] $(3,-8)$.
+    \item[f)] $(-5,-10)$.
+    \item[g)] $(-6,9)$.
+    \item[h)] $(3,-7)$.
+\end{enumerate}
+
+\subsubsection*{10. Combinaciones}
+\begin{enumerate}
+    \item[a)] $(0,8)$.
+    \item[b)] $(5,-5)$.
+    \item[c)] $(1,2)$.
+    \item[d)] $(4,-13)$.
+    \item[e)] $(4,-10)$.
+    \item[f)] $(-6,5)$.
+    \item[g)] $(2,21)$.
+    \item[h)] $(-1/2,3/2)$.
+    \item[i)] $(19,2)$.
+    \item[j)] $(-7,14)$.
+\end{enumerate}
+
+\subsubsection*{11. Propiedades del producto por un número}
+\begin{enumerate}
+    \item[a)] $(3,15)$ y $(3,15)$.
+    \item[b)] $(-12,4)$ y $(-12,4)$.
+    \item[c)] $(3,1)$ y $(3,1)$.
+    \item[d)] $(7,-21)$ y $(7,-21)$.
+    \item[e)] $(-8,-4)$ y $(-8,-4)$.
+    \item[f)] $(6,-12)$ y $(6,-12)$.
+    \item[g)] $(-12,-10)$ y $(-12,-10)$.
+\end{enumerate}
+
+\subsubsection*{12. Propiedades de la suma y la resta}
+\begin{enumerate}
+    \item[a)] $(-2,2)$ y $(-2,2)$.
+    \item[b)] $(6,6)$ y $(6,6)$.
+    \item[c)] $(2,3)$ y $(2,3)$.
+    \item[d)] $(0,-4)$ y $(0,-4)$.
+    \item[e)] $(6,-2)$ y $(-6,2)$.
+    \item[f)] $(-6,-7)$ y $(6,7)$.
+\end{enumerate}
+
+\subsubsection*{13. Extremo de un vector}
+\begin{enumerate}
+    \item[a)] $B(5,5)$.
+    \item[b)] $B(1,-2)$.
+    \item[c)] $B(-6,1)$.
+    \item[d)] $B(0,0)$.
+    \item[e)] $B(-3,7)$.
+    \item[f)] $B(-3,-3)$.
+\end{enumerate}
+
+\subsubsection*{14. Origen de un vector}
+\begin{enumerate}
+    \item[a)] $A(3,2)$.
+    \item[b)] $A(3,3)$.
+    \item[c)] $A(-6,-4)$.
+    \item[d)] $A(0,0)$.
+    \item[e)] $A(6,4)$.
+    \item[f)] $A(-9,12)$.
+\end{enumerate}
+
+\subsubsection*{15. Punto medio}
+\begin{enumerate}
+    \item[a)] $M(4,6)$.
+    \item[b)] $M(1,4)$.
+    \item[c)] $M(-3,3)$.
+    \item[d)] $M(5/2,7/2)$.
+    \item[e)] $M(-3,-11/2)$.
+    \item[f)] $M(0,0)$.
+    \item[g)] $B(5,8)$.
+    \item[h)] $B(2,-4)$.
+    \item[i)] $B(-2,7)$.
+\end{enumerate}
+
+\subsubsection*{16. Vectores iguales}
+\begin{enumerate}
+    \item[a)] $\overrightarrow{AB}=(2,3)$,
+    $\overrightarrow{CD}=(2,3)$: sí.
+    \item[b)] $\overrightarrow{AB}=(4,-2)$,
+    $\overrightarrow{CD}=(4,-3)$: no.
+    \item[c)] $\overrightarrow{AB}=(2,-4)$,
+    $\overrightarrow{CD}=(2,-4)$: sí.
+    \item[d)] $\overrightarrow{AB}=(-4,3)$,
+    $\overrightarrow{CD}=(4,-3)$: no.
+    \item[e)] $\overrightarrow{AB}=(7,1)$,
+    $\overrightarrow{CD}=(7,1)$: sí.
+\end{enumerate}
+
+\subsubsection*{17. Cuarto vértice de un paralelogramo}
+\begin{enumerate}
+    \item[a)] $\overrightarrow{AB}=(4,0)$, $D(1,3)$.
+    \item[b)] $\overrightarrow{AB}=(4,1)$, $D(2,6)$.
+    \item[c)] $\overrightarrow{AB}=(5,-2)$, $D(-1,6)$.
+    \item[d)] $\overrightarrow{AB}=(4,-2)$, $D(-2,4)$.
+\end{enumerate}
+
+\subsubsection*{18. Ecuaciones con vectores}
+\begin{enumerate}
+    \item[a)] $\vec{x}=(2,6)$.
+    \item[b)] $\vec{x}=(-3,9)$.
+    \item[c)] $\vec{x}=(4,-3)$.
+    \item[d)] $\vec{x}=(3,-2)$.
+    \item[e)] $\vec{x}=(3,6)$.
+    \item[f)] $\vec{x}=(1,7)$.
+    \item[g)] $\vec{x}=(3,4)$.
+    \item[h)] $\vec{x}=(4,-6)$.
+\end{enumerate}
+
+\subsubsection*{19. Posición y desplazamiento}
+\begin{enumerate}
+    \item[a)]
+    $\Delta\vec{r}_1=(4,3)$,
+    $\Delta\vec{r}_2=(0,4)$,
+    $\Delta\vec{r}_3=(-6,0)$;
+    tramos $5$, $4$ y $6\,\mathrm{m}$;
+    $\Delta\vec{r}=(-2,7)$,
+    $|\Delta\vec{r}|=\sqrt{53}\approx7.28\,\mathrm{m}$;
+    suma de tramos $15\,\mathrm{m}$.
+
+    \item[b)]
+    $\Delta\vec{r}_1=(6,0)$,
+    $\Delta\vec{r}_2=(0,8)$,
+    $\Delta\vec{r}_3=(-6,-8)$;
+    tramos $6$, $8$ y $10\,\mathrm{m}$;
+    $\Delta\vec{r}=(0,0)$,
+    $|\Delta\vec{r}|=0\,\mathrm{m}$;
+    suma de tramos $24\,\mathrm{m}$.
+
+    \item[c)]
+    $\Delta\vec{r}_1=(3,4)$,
+    $\Delta\vec{r}_2=(5,12)$,
+    $\Delta\vec{r}_3=(-6,-8)$;
+    tramos $5$, $13$ y $10\,\mathrm{m}$;
+    $\Delta\vec{r}=(2,8)$,
+    $|\Delta\vec{r}|=2\sqrt{17}\approx8.25\,\mathrm{m}$;
+    suma de tramos $28\,\mathrm{m}$.
+\end{enumerate}
+
+\subsubsection*{20. Fuerzas}
+\begin{enumerate}
+    \item[a)] $\vec{R}=(3,4)\,\mathrm{N}$,
+    $|\vec{R}|=5\,\mathrm{N}$,
+    $-\vec{R}=(-3,-4)\,\mathrm{N}$.
+
+    \item[b)] $\vec{R}=(6,3)\,\mathrm{N}$,
+    $|\vec{R}|=3\sqrt{5}\approx6.71\,\mathrm{N}$,
+    $-\vec{R}=(-6,-3)\,\mathrm{N}$.
+
+    \item[c)] $\vec{R}=(0,0)\,\mathrm{N}$,
+    $|\vec{R}|=0\,\mathrm{N}$; no hace falta añadir nada.
+
+    \item[d)] $\vec{R}=(-5,0)\,\mathrm{N}$,
+    $|\vec{R}|=5\,\mathrm{N}$,
+    $-\vec{R}=(5,0)\,\mathrm{N}$.
+
+    \item[e)] $\vec{R}=(0,0)\,\mathrm{N}$,
+    $|\vec{R}|=0\,\mathrm{N}$; no hace falta añadir nada.
+
+    \item[f)] $\vec{R}=(4,8)\,\mathrm{N}$,
+    $|\vec{R}|=4\sqrt{5}\approx8.94\,\mathrm{N}$,
+    $-\vec{R}=(-4,-8)\,\mathrm{N}$.
+\end{enumerate}
+
+\subsection{Soluciones de 4.º ESO}
+
+\subsubsection*{21. Componentes a partir del módulo y el ángulo}
+\begin{enumerate}
+    \item[a)] $(10,0)$.
+    \item[b)] $(0,10)$.
+    \item[c)] $(-8,0)$.
+    \item[d)] $(0,-6)$.
+    \item[e)] $(5\sqrt{3}\approx8.66,5)$.
+    \item[f)] $(2,2\sqrt{3}\approx3.46)$.
+    \item[g)] $(3\sqrt{2}\approx4.24,3\sqrt{2}\approx4.24)$.
+    \item[h)] $(-10,10\sqrt{3}\approx17.32)$.
+    \item[i)] $(-6\sqrt{3}\approx-10.39,6)$.
+    \item[j)] $(-5\sqrt{3}\approx-8.66,-5)$.
+    \item[k)] $(4,-4\sqrt{3}\approx-6.93)$.
+    \item[l)] $(19.97,15.05)$.
+    \item[m)] $P_{\parallel}=50\,\mathrm{N}$,
+    $P_{\perp}=50\sqrt{3}\approx86.60\,\mathrm{N}$.
+    \item[n)] $P_{\parallel}=25\sqrt{2}\approx35.36\,\mathrm{N}$,
+    $P_{\perp}=25\sqrt{2}\approx35.36\,\mathrm{N}$.
+    \item[o)] $P_{\parallel}=100\sqrt{3}\approx173.21\,\mathrm{N}$,
+    $P_{\perp}=100\,\mathrm{N}$.
+    \item[p)] $P_{\parallel}=48.15\,\mathrm{N}$,
+    $P_{\perp}=63.89\,\mathrm{N}$.
+\end{enumerate}
+
+\subsubsection*{22. Módulo y ángulo a partir de las componentes}
+\begin{enumerate}
+    \item[a)] $|\vec{u}|=5\sqrt{2}\approx7.07$, $\alpha=45^\circ$.
+    \item[b)] $|\vec{u}|=6$, $\alpha=90^\circ$.
+    \item[c)] $|\vec{u}|=4$, $\alpha=180^\circ$.
+    \item[d)] $|\vec{u}|=5$, $\alpha=53.13^\circ$.
+    \item[e)] $|\vec{u}|=5$, $\alpha=126.87^\circ$.
+    \item[f)] $|\vec{u}|=10$, $\alpha=233.13^\circ$.
+    \item[g)] $|\vec{u}|=13$, $\alpha=292.62^\circ$.
+    \item[h)] $|\vec{u}|=\sqrt{2}\approx1.41$, $\alpha=315^\circ$.
+    \item[i)] $|\vec{u}|=2\sqrt{2}\approx2.83$, $\alpha=225^\circ$.
+    \item[j)] $|\vec{u}|=17$, $\alpha=118.07^\circ$.
+\end{enumerate}
+
+\subsubsection*{23. Vector unitario}
+\begin{enumerate}
+    \item[a)] $(3/5,4/5)$.
+    \item[b)] $(0,-1)$.
+    \item[c)] $(-5/13,12/13)$.
+    \item[d)] $(\sqrt{2}/2,\sqrt{2}/2)$.
+    \item[e)] $(3/5,-4/5)$.
+    \item[f)] $(2\sqrt{5}/5,-\sqrt{5}/5)$.
+\end{enumerate}
+
+\subsubsection*{24. Vector de módulo dado}
+\begin{enumerate}
+    \item[a)] $(6,8)$.
+    \item[b)] $(10,-24)$.
+    \item[c)] $(0,-3)$.
+    \item[d)] $(-12,9)$.
+    \item[e)] $(-3,-4)$.
+    \item[f)] $(4,4)$.
+\end{enumerate}
+
+\subsubsection*{25. Resultante de fuerzas dadas por módulo y ángulo}
+\begin{enumerate}
+    \item[a)] Componentes $(10,0)$, $(0,10)$;
+    $\vec{R}=(10,10)\,\mathrm{N}$;
+    $|\vec{R}|=10\sqrt{2}\approx14.14\,\mathrm{N}$;
+    $\alpha=45^\circ$.
+
+    \item[b)] Componentes $(20,0)$,
+    $(-10,10\sqrt{3}\approx17.32)$;
+    $\vec{R}=(10,10\sqrt{3}\approx17.32)\,\mathrm{N}$;
+    $|\vec{R}|=20\,\mathrm{N}$;
+    $\alpha=60^\circ$.
+
+    \item[c)] Componentes $(4\sqrt{3}\approx6.93,4)$,
+    $(-3,3\sqrt{3}\approx5.20)$;
+    $\vec{R}=(4\sqrt{3}-3\approx3.93,4+3\sqrt{3}\approx9.20)\,\mathrm{N}$;
+    $|\vec{R}|=10\,\mathrm{N}$;
+    $\alpha=66.87^\circ$.
+
+    \item[d)] Componentes $(50,0)$, $(0,30)$, $(-40,0)$, $(0,-30)$;
+    $\vec{R}=(10,0)\,\mathrm{N}$;
+    $|\vec{R}|=10\,\mathrm{N}$;
+    $\alpha=0^\circ$.
+
+    \item[e)] Componentes
+    $(6\sqrt{2}\approx8.49,6\sqrt{2}\approx8.49)$,
+    $(-6\sqrt{2}\approx-8.49,6\sqrt{2}\approx8.49)$,
+    $(0,-10)$;
+    $\vec{R}=(0,12\sqrt{2}-10\approx6.97)\,\mathrm{N}$;
+    $|\vec{R}|=12\sqrt{2}-10\approx6.97\,\mathrm{N}$;
+    $\alpha=90^\circ$.
+
+    \item[f)] Componentes $(15,0)$,
+    $(5,5\sqrt{3}\approx8.66)$,
+    $(5,-5\sqrt{3}\approx-8.66)$;
+    $\vec{R}=(25,0)\,\mathrm{N}$;
+    $|\vec{R}|=25\,\mathrm{N}$;
+    $\alpha=0^\circ$.
+\end{enumerate}
+
+\subsubsection*{26. Producto escalar con componentes}
+\begin{enumerate}
+    \item[a)] $11$.
+    \item[b)] $7$.
+    \item[c)] $0$.
+    \item[d)] $-20$.
+    \item[e)] $25$.
+    \item[f)] $0$.
+    \item[g)] $0$.
+    \item[h)] $-13$.
+    \item[i)] $-48$.
+    \item[j)] $20$.
+    \item[k)] $7$ y $7$.
+    \item[l)] $2$ y $2$.
+    \item[m)] $5$ y $5$.
+    \item[n)] $-5$ y $-5$.
+\end{enumerate}
+
+\subsubsection*{27. Producto escalar con módulos y ángulo}
+\begin{enumerate}
+    \item[a)] $20$.
+    \item[b)] $9$.
+    \item[c)] $0$.
+    \item[d)] $-20$.
+    \item[e)] $-15$.
+    \item[f)] $12\sqrt{2}\approx16.97$.
+    \item[g)] $-2\sqrt{3}\approx-3.46$.
+    \item[h)] $21\sqrt{3}/2\approx18.19$.
+\end{enumerate}
+
+\subsubsection*{28. Ángulo entre dos vectores}
+\begin{enumerate}
+    \item[a)] $\vec{u}\cdot\vec{v}=0$,
+    $\cos\theta=0$, $\theta=90^\circ$.
+    \item[b)] $\vec{u}\cdot\vec{v}=1$,
+    $\cos\theta=\sqrt{2}/2\approx0.71$, $\theta=45^\circ$.
+    \item[c)] $\vec{u}\cdot\vec{v}=24$,
+    $\cos\theta=24/25$, $\theta=16.26^\circ$.
+    \item[d)] $\vec{u}\cdot\vec{v}=-10$,
+    $\cos\theta=-1$, $\theta=180^\circ$.
+    \item[e)] $\vec{u}\cdot\vec{v}=-15$,
+    $\cos\theta=-3/5$, $\theta=126.87^\circ$.
+    \item[f)] $\vec{u}\cdot\vec{v}=5$,
+    $\cos\theta=\sqrt{2}/2\approx0.71$, $\theta=45^\circ$.
+    \item[g)] $\vec{u}\cdot\vec{v}=-1$,
+    $\cos\theta=-\sqrt{2}/2\approx-0.71$, $\theta=135^\circ$.
+    \item[h)] $\vec{u}\cdot\vec{v}=1$,
+    $\cos\theta=\sqrt{2}/10\approx0.14$, $\theta=81.87^\circ$.
+\end{enumerate}
+
+\subsubsection*{29. Perpendiculares y paralelos}
+\begin{enumerate}
+    \item[a)] $k=-1$.
+    \item[b)] $k=2$.
+    \item[c)] $k=4$.
+    \item[d)] $k=-6$ o $6$.
+    \item[e)] $k=2$.
+    \item[f)] $k=6$.
+    \item[g)] $k=-2$.
+    \item[h)] $k=-2$.
+    \item[i)] $k=-4$ o $4$.
+    \item[j)] Paralelos: $(4,-6)=-2\cdot(-2,3)$.
+    \item[k)] Perpendiculares: $\vec{u}\cdot\vec{v}=0$.
+    \item[l)] Ninguna:
+    $\vec{u}\cdot\vec{v}=8\neq0$ y $1/2\neq2/3$.
+    \item[m)] Perpendiculares: $\vec{u}\cdot\vec{v}=0$.
+    \item[n)] $(4/5,-3/5)$ y $(-4/5,3/5)$.
+\end{enumerate}
+
+\subsubsection*{30. Trabajo de una fuerza}
+\begin{enumerate}
+    \item[a)] $W=50\,\mathrm{J}$.
+    \item[b)] $W=18\,\mathrm{J}$.
+    \item[c)] $W=0\,\mathrm{J}$.
+    \item[d)] $W=-14\,\mathrm{J}$.
+    \item[e)] $W=54\,\mathrm{J}$.
+    \item[f)] $W=0\,\mathrm{J}$.
+    \item[g)] $W=500\,\mathrm{J}$.
+    \item[h)] $W=250\,\mathrm{J}$.
+    \item[i)] $W=0\,\mathrm{J}$.
+    \item[j)] $W=-150\,\mathrm{J}$.
+    \item[k)] $W=638.91\,\mathrm{J}$.
+    \item[l)] $W=100\sqrt{2}\approx141.42\,\mathrm{J}$.
+    \item[m)] $\Delta\vec{r}=(5,3)\,\mathrm{m}$,
+    $W=14\,\mathrm{J}$.
+    \item[n)] $\Delta\vec{r}=(-4,-3)\,\mathrm{m}$,
+    $W=-3\,\mathrm{J}$.
+    \item[o)] $\Delta\vec{r}=(5,-5)\,\mathrm{m}$,
+    $W=0\,\mathrm{J}$.
+\end{enumerate}Podem escollir la representació que més ens convingui en cada situació. Totes tres representen el mateix vector, però cap d’elles, per si sola, és el vector: són diferents maneres d’expressar un mateix objecte matemàtic.
+
+Els vectors se solen escriure amb una fletxa al damunt per diferenciar-los dels nombres, tot i que en molts llibres se solen representar en negreta.
+Els símbols  Mathjax  i  Mathjax  representen dos vectors especials que estudiarem a la secció següent. Habitualment s’escriuen amb un barret al damunt, encara també se sol fer ús de la negreta.

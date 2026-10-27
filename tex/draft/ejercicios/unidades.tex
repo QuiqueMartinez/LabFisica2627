@@ -1,0 +1,1245 @@
+\section{Unidades y conversiones: colección de ejercicios (3.º y 4.º ESO)}
+
+11 de octubre de 2026 · @Quique
+
+\subsection{Reglas del juego}
+
+Treinta ejercicios de cálculo con unidades: del 1 al 20 para 3.º ESO y del 21 al 30 para 4.º ESO. Cada apartado tiene una única respuesta y está en las soluciones del final. Todo lo que hace falta saber está en las tablas de esta sección.
+
+Los decimales se escriben con punto ($2.5$). La notación científica es $a\cdot10^n$ con $1\leq a<10$, por ejemplo $4.5\cdot10^3$. Para convertir se multiplica por un factor de conversión, una fracción que vale $1$ porque arriba y abajo hay la misma cantidad:
+\[
+3.5\,\mathrm{km}\cdot
+\frac{1000\,\mathrm{m}}{1\,\mathrm{km}}
+=3500\,\mathrm{m}.
+\]
+
+\subsubsection*{Magnitudes básicas del SI}
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+Magnitud & Unidad & Símbolo \\
+\hline
+Longitud & metro & $\mathrm{m}$ \\
+Masa & kilogramo & $\mathrm{kg}$ \\
+Tiempo & segundo & $\mathrm{s}$ \\
+Temperatura & kelvin & $\mathrm{K}$ \\
+Intensidad de corriente & amperio & $\mathrm{A}$ \\
+Cantidad de sustancia & mol & $\mathrm{mol}$ \\
+Intensidad luminosa & candela & $\mathrm{cd}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Unidades derivadas que se usan aquí:}
+superficie $\mathrm{m^2}$, volumen $\mathrm{m^3}$,
+velocidad $\mathrm{m/s}$, aceleración $\mathrm{m/s^2}$,
+densidad $\mathrm{kg/m^3}$, fuerza newton ($\mathrm{N}$),
+presión pascal ($\mathrm{Pa}$), energía y trabajo julio ($\mathrm{J}$),
+potencia vatio ($\mathrm{W}$).
+
+\subsubsection*{Prefijos}
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+Prefijo & Símbolo & Factor \\
+\hline
+tera & $\mathrm{T}$ & $10^{12}$ \\
+giga & $\mathrm{G}$ & $10^9$ \\
+mega & $\mathrm{M}$ & $10^6$ \\
+kilo & $\mathrm{k}$ & $10^3$ \\
+hecto & $\mathrm{h}$ & $10^2$ \\
+deca & $\mathrm{da}$ & $10$ \\
+deci & $\mathrm{d}$ & $10^{-1}$ \\
+centi & $\mathrm{c}$ & $10^{-2}$ \\
+mili & $\mathrm{m}$ & $10^{-3}$ \\
+micro & $\mu$ & $10^{-6}$ \\
+nano & $\mathrm{n}$ & $10^{-9}$ \\
+pico & $\mathrm{p}$ & $10^{-12}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+Con superficies el factor del prefijo va al cuadrado:
+\[
+1\,\mathrm{cm^2}=(10^{-2}\,\mathrm{m})^2
+=10^{-4}\,\mathrm{m^2}.
+\]
+Con volúmenes va al cubo:
+\[
+1\,\mathrm{cm^3}=(10^{-2}\,\mathrm{m})^3
+=10^{-6}\,\mathrm{m^3}.
+\]
+
+\subsubsection*{Equivalencias}
+
+\begin{description}
+    \item[3.º ESO.]
+    \begin{itemize}
+        \item $1\,\mathrm{t}=1000\,\mathrm{kg}$.
+        \item $1\,\mathrm{h}=60\,\mathrm{min}=3600\,\mathrm{s}$;
+        $1$ día $=24\,\mathrm{h}$;
+        $1$ semana $=7$ días.
+        \item $1\,\mathrm{L}=1\,\mathrm{dm^3}$;
+        $1\,\mathrm{mL}=1\,\mathrm{cm^3}$.
+        \item $1\,\mathrm{ha}=1\,\mathrm{hm^2}=10\,000\,\mathrm{m^2}$.
+        \item $T(\mathrm{K})=T({}^\circ\mathrm{C})+273$.
+    \end{itemize}
+
+    \item[4.º ESO.]
+    \begin{itemize}
+        \item $g=9.8\,\mathrm{m/s^2}$; peso: $P=mg$.
+        \item $1\,\mathrm{atm}=101\,325\,\mathrm{Pa}=760\,\mathrm{mmHg}$;
+        $1\,\mathrm{bar}=10^5\,\mathrm{Pa}$.
+        \item $1\,\mathrm{cal}=4.18\,\mathrm{J}$;
+        $1\,\mathrm{kWh}=3.6\cdot10^6\,\mathrm{J}$.
+        \item $1\,\mathrm{CV}=735\,\mathrm{W}$.
+        \item Velocidad de la luz:
+        $c=3\cdot10^8\,\mathrm{m/s}$;
+        $1$ año $=365$ días.
+    \end{itemize}
+\end{description}
+
+\subsubsection*{Cifras significativas (4.º)}
+
+\begin{itemize}
+    \item Toda cifra distinta de cero es significativa:
+    $3.47$ tiene $3$.
+    \item Los ceros entre cifras significativas cuentan:
+    $2.05$ tiene $3$.
+    \item Los ceros a la izquierda no cuentan:
+    $0.0031$ tiene $2$.
+    \item Los ceros a la derecha después del punto decimal cuentan:
+    $4.50$ tiene $3$.
+    \item En notación científica cuentan todas las cifras de $a$:
+    $6.0\cdot10^3$ tiene $2$.
+    \item Multiplicar o dividir: el resultado lleva tantas cifras
+    significativas como el dato que menos tenga:
+    $1.8\cdot3.14=5.7$.
+    \item Sumar o restar: el resultado lleva tantos decimales
+    como el dato que menos tenga:
+    $12.1+0.27=12.4$.
+\end{itemize}
+
+\subsection{3.º ESO: ejercicios 1--10}
+
+\subsubsection*{Ejercicio 1. Unidades del SI}
+
+Escribe la unidad del SI de cada magnitud (nombre y símbolo para las básicas, símbolo para las derivadas).
+
+\begin{enumerate}
+    \item[a)] Longitud.
+    \item[b)] Masa.
+    \item[c)] Tiempo.
+    \item[d)] Temperatura.
+    \item[e)] Intensidad de corriente.
+    \item[f)] Cantidad de sustancia.
+    \item[g)] Intensidad luminosa.
+    \item[h)] Superficie.
+    \item[i)] Volumen.
+    \item[j)] Velocidad.
+    \item[k)] Aceleración.
+    \item[l)] Densidad.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 2. Prefijos}
+
+En a)--j) escribe el símbolo y el factor del prefijo.
+En k)--p) escribe el prefijo que corresponde al factor.
+
+\begin{enumerate}
+    \item[a)] Kilo.
+    \item[b)] Mega.
+    \item[c)] Micro.
+    \item[d)] Centi.
+    \item[e)] Giga.
+    \item[f)] Mili.
+    \item[g)] Hecto.
+    \item[h)] Nano.
+    \item[i)] Deci.
+    \item[j)] Deca.
+    \item[k)] Factor $10^{-3}$.
+    \item[l)] Factor $10^6$.
+    \item[m)] Factor $10^{-9}$.
+    \item[n)] Factor $10^2$.
+    \item[o)] Factor $10^{-6}$.
+    \item[p)] Factor $10^{12}$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 3. Escribir en notación científica}
+
+Escribe cada número en la forma $a\cdot10^n$.
+
+\begin{enumerate}
+    \item[a)] $45\,000$.
+    \item[b)] $0.0032$.
+    \item[c)] $6\,020\,000$.
+    \item[d)] $0.00000081$.
+    \item[e)] $123.4$.
+    \item[f)] $0.5$.
+    \item[g)] $300\,000\,000$.
+    \item[h)] $0.000045$.
+    \item[i)] $9\,870\,000\,000$.
+    \item[j)] $0.07$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 4. Pasar de notación científica a número decimal}
+
+Escribe cada número sin potencias de $10$.
+
+\begin{enumerate}
+    \item[a)] $2.5\cdot10^3$.
+    \item[b)] $7\cdot10^{-2}$.
+    \item[c)] $1.08\cdot10^5$.
+    \item[d)] $4.3\cdot10^{-4}$.
+    \item[e)] $9.99\cdot10$.
+    \item[f)] $6\cdot10^0$.
+    \item[g)] $3.001\cdot10^6$.
+    \item[h)] $5.2\cdot10^{-7}$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 5. Operaciones en notación científica}
+
+Calcula y da el resultado en notación científica.
+
+\begin{enumerate}
+    \item[a)] $(3\cdot10^4)\cdot(2\cdot10^3)$.
+    \item[b)] $(5\cdot10^{-2})\cdot(4\cdot10^6)$.
+    \item[c)] $\dfrac{8\cdot10^9}{2\cdot10^3}$.
+    \item[d)] $\dfrac{6\cdot10^{-5}}{3\cdot10^2}$.
+    \item[e)] $(2.5\cdot10^3)\cdot(4\cdot10^{-8})$.
+    \item[f)] $\dfrac{9\cdot10^7}{4.5\cdot10^{-3}}$.
+    \item[g)] $(1.2\cdot10^5)\cdot(3\cdot10^4)$.
+    \item[h)] $(7\cdot10^{-4})\cdot(5\cdot10^{-6})$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 6. Longitud}
+
+Convierte a la unidad indicada.
+
+\begin{enumerate}
+    \item[a)] $3.5\,\mathrm{km}\rightarrow\mathrm{m}$.
+    \item[b)] $250\,\mathrm{cm}\rightarrow\mathrm{m}$.
+    \item[c)] $4\,\mathrm{mm}\rightarrow\mathrm{m}$.
+    \item[d)] $0.75\,\mathrm{m}\rightarrow\mathrm{cm}$.
+    \item[e)] $12\,\mathrm{dam}\rightarrow\mathrm{m}$.
+    \item[f)] $8000\,\mathrm{mm}\rightarrow\mathrm{km}$.
+    \item[g)] $2.3\,\mathrm{hm}\rightarrow\mathrm{dm}$.
+    \item[h)] $560\,\mu\mathrm{m}\rightarrow\mathrm{m}$.
+    \item[i)] $45\,\mathrm{nm}\rightarrow\mathrm{m}$.
+    \item[j)] $0.006\,\mathrm{km}\rightarrow\mathrm{cm}$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 7. Masa}
+
+Convierte a la unidad indicada.
+
+\begin{enumerate}
+    \item[a)] $2.4\,\mathrm{kg}\rightarrow\mathrm{g}$.
+    \item[b)] $350\,\mathrm{g}\rightarrow\mathrm{kg}$.
+    \item[c)] $75\,\mathrm{mg}\rightarrow\mathrm{g}$.
+    \item[d)] $1.5\,\mathrm{t}\rightarrow\mathrm{kg}$.
+    \item[e)] $0.08\,\mathrm{kg}\rightarrow\mathrm{mg}$.
+    \item[f)] $4500\,\mathrm{g}\rightarrow\mathrm{kg}$.
+    \item[g)] $12\,\mathrm{hg}\rightarrow\mathrm{kg}$.
+    \item[h)] $600\,\mu\mathrm{g}\rightarrow\mathrm{g}$.
+    \item[i)] $3\,\mathrm{dag}\rightarrow\mathrm{g}$.
+    \item[j)] $250\,\mathrm{cg}\rightarrow\mathrm{g}$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 8. Tiempo}
+
+Convierte a la unidad indicada.
+
+\begin{enumerate}
+    \item[a)] $2\,\mathrm{h}\rightarrow\mathrm{s}$.
+    \item[b)] $45\,\mathrm{min}\rightarrow\mathrm{s}$.
+    \item[c)] $3600\,\mathrm{s}\rightarrow\mathrm{h}$.
+    \item[d)] $1.5\,\mathrm{h}\rightarrow\mathrm{min}$.
+    \item[e)] $1$ día $\rightarrow\mathrm{s}$.
+    \item[f)] $90\,\mathrm{min}\rightarrow\mathrm{h}$.
+    \item[g)] $7200\,\mathrm{s}\rightarrow\mathrm{min}$.
+    \item[h)] $0.25\,\mathrm{h}\rightarrow\mathrm{s}$.
+    \item[i)] $1$ semana $\rightarrow\mathrm{s}$.
+    \item[j)] $30\,\mathrm{s}\rightarrow\mathrm{min}$.
+    \item[k)] $2\,\mathrm{h}\ 15\,\mathrm{min}\ 30\,\mathrm{s}
+    \rightarrow\mathrm{s}$.
+    \item[l)] $3$ días $4\,\mathrm{h}\rightarrow\mathrm{h}$.
+    \item[m)] $10\,000\,\mathrm{s}\rightarrow$
+    horas, minutos y segundos.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 9. Capacidad}
+
+Convierte a la unidad indicada.
+
+\begin{enumerate}
+    \item[a)] $2.5\,\mathrm{L}\rightarrow\mathrm{mL}$.
+    \item[b)] $750\,\mathrm{mL}\rightarrow\mathrm{L}$.
+    \item[c)] $3\,\mathrm{hL}\rightarrow\mathrm{L}$.
+    \item[d)] $45\,\mathrm{cL}\rightarrow\mathrm{L}$.
+    \item[e)] $0.2\,\mathrm{L}\rightarrow\mathrm{cL}$.
+    \item[f)] $1500\,\mathrm{mL}\rightarrow\mathrm{L}$.
+    \item[g)] $8\,\mathrm{dL}\rightarrow\mathrm{mL}$.
+    \item[h)] $0.05\,\mathrm{kL}\rightarrow\mathrm{L}$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 10. Al SI en notación científica}
+
+Pasa a la unidad del SI y escribe el resultado en notación científica.
+Ojo: la unidad de masa del SI es el kilogramo.
+
+\begin{enumerate}
+    \item[a)] $25\,\mathrm{km}$.
+    \item[b)] $3\,\mathrm{ms}$.
+    \item[c)] $450\,\mathrm{mg}$.
+    \item[d)] $2\,\mathrm{h}$.
+    \item[e)] $5\,\mu\mathrm{s}$.
+    \item[f)] $6.2\,\mathrm{Gm}$.
+    \item[g)] $300\,\mathrm{nm}$.
+    \item[h)] $8\,\mathrm{t}$.
+    \item[i)] $15\,\mathrm{min}$.
+    \item[j)] $0.4\,\mathrm{g}$.
+\end{enumerate}
+
+\subsection{3.º ESO: ejercicios 11--20}
+
+\subsubsection*{Ejercicio 11. Superficie}
+
+Convierte a la unidad indicada.
+
+\begin{enumerate}
+    \item[a)] $3\,\mathrm{m^2}\rightarrow\mathrm{cm^2}$.
+    \item[b)] $25\,000\,\mathrm{cm^2}\rightarrow\mathrm{m^2}$.
+    \item[c)] $4\,\mathrm{km^2}\rightarrow\mathrm{m^2}$.
+    \item[d)] $2.5\,\mathrm{dm^2}\rightarrow\mathrm{m^2}$.
+    \item[e)] $800\,\mathrm{mm^2}\rightarrow\mathrm{cm^2}$.
+    \item[f)] $1\,\mathrm{ha}\rightarrow\mathrm{m^2}$.
+    \item[g)] $0.35\,\mathrm{m^2}\rightarrow\mathrm{dm^2}$.
+    \item[h)] $6000\,\mathrm{m^2}\rightarrow\mathrm{km^2}$.
+    \item[i)] $12\,\mathrm{cm^2}\rightarrow\mathrm{m^2}$.
+    \item[j)] $3.2\,\mathrm{ha}\rightarrow\mathrm{km^2}$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 12. Volumen}
+
+Convierte a la unidad indicada.
+
+\begin{enumerate}
+    \item[a)] $2\,\mathrm{m^3}\rightarrow\mathrm{dm^3}$.
+    \item[b)] $5000\,\mathrm{cm^3}\rightarrow\mathrm{m^3}$.
+    \item[c)] $0.4\,\mathrm{dm^3}\rightarrow\mathrm{cm^3}$.
+    \item[d)] $3000\,\mathrm{mm^3}\rightarrow\mathrm{cm^3}$.
+    \item[e)] $1.2\,\mathrm{m^3}\rightarrow\mathrm{cm^3}$.
+    \item[f)] $250\,\mathrm{cm^3}\rightarrow\mathrm{dm^3}$.
+    \item[g)] $0.007\,\mathrm{km^3}\rightarrow\mathrm{m^3}$.
+    \item[h)] $45\,\mathrm{dm^3}\rightarrow\mathrm{m^3}$.
+    \item[i)] $8\,\mathrm{cm^3}\rightarrow\mathrm{mm^3}$.
+    \item[j)] $600\,000\,\mathrm{cm^3}\rightarrow\mathrm{m^3}$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 13. Volumen y capacidad}
+
+Convierte a la unidad indicada usando
+$1\,\mathrm{L}=1\,\mathrm{dm^3}$ y
+$1\,\mathrm{mL}=1\,\mathrm{cm^3}$.
+
+\begin{enumerate}
+    \item[a)] $1\,\mathrm{L}\rightarrow\mathrm{dm^3}$.
+    \item[b)] $1\,\mathrm{mL}\rightarrow\mathrm{cm^3}$.
+    \item[c)] $2\,\mathrm{m^3}\rightarrow\mathrm{L}$.
+    \item[d)] $500\,\mathrm{cm^3}\rightarrow\mathrm{L}$.
+    \item[e)] $3.5\,\mathrm{L}\rightarrow\mathrm{cm^3}$.
+    \item[f)] $250\,\mathrm{mL}\rightarrow\mathrm{m^3}$.
+    \item[g)] $0.8\,\mathrm{dm^3}\rightarrow\mathrm{mL}$.
+    \item[h)] $12\,\mathrm{L}\rightarrow\mathrm{m^3}$.
+    \item[i)] $4500\,\mathrm{cm^3}\rightarrow\mathrm{L}$.
+    \item[j)] $1\,\mathrm{m^3}\rightarrow\mathrm{mL}$.
+    \item[k)] $75\,\mathrm{cL}\rightarrow\mathrm{cm^3}$.
+    \item[l)] $0.002\,\mathrm{m^3}\rightarrow\mathrm{mL}$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 14. Densidad}
+
+Si el dato está en $\mathrm{g/cm^3}$, pásalo a $\mathrm{kg/m^3}$.
+Si está en $\mathrm{kg/m^3}$, pásalo a $\mathrm{g/cm^3}$.
+Si está en $\mathrm{g/mL}$, pásalo a $\mathrm{kg/L}$ y a $\mathrm{kg/m^3}$.
+
+\begin{enumerate}
+    \item[a)] $1\,\mathrm{g/cm^3}$.
+    \item[b)] $2.7\,\mathrm{g/cm^3}$.
+    \item[c)] $13.6\,\mathrm{g/cm^3}$.
+    \item[d)] $0.8\,\mathrm{g/cm^3}$.
+    \item[e)] $7800\,\mathrm{kg/m^3}$.
+    \item[f)] $1000\,\mathrm{kg/m^3}$.
+    \item[g)] $920\,\mathrm{kg/m^3}$.
+    \item[h)] $19\,300\,\mathrm{kg/m^3}$.
+    \item[i)] $1.03\,\mathrm{g/mL}$.
+    \item[j)] $0.0013\,\mathrm{g/cm^3}$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 15. Velocidad}
+
+Convierte con factores de conversión:
+$1\,\mathrm{km}=1000\,\mathrm{m}$ y
+$1\,\mathrm{h}=3600\,\mathrm{s}$.
+
+\begin{enumerate}
+    \item[a)] $36\,\mathrm{km/h}\rightarrow\mathrm{m/s}$.
+    \item[b)] $72\,\mathrm{km/h}\rightarrow\mathrm{m/s}$.
+    \item[c)] $90\,\mathrm{km/h}\rightarrow\mathrm{m/s}$.
+    \item[d)] $120\,\mathrm{km/h}\rightarrow\mathrm{m/s}$.
+    \item[e)] $54\,\mathrm{km/h}\rightarrow\mathrm{m/s}$.
+    \item[f)] $18\,\mathrm{km/h}\rightarrow\mathrm{m/s}$.
+    \item[g)] $100\,\mathrm{km/h}\rightarrow\mathrm{m/s}$.
+    \item[h)] $10\,\mathrm{m/s}\rightarrow\mathrm{km/h}$.
+    \item[i)] $25\,\mathrm{m/s}\rightarrow\mathrm{km/h}$.
+    \item[j)] $340\,\mathrm{m/s}\rightarrow\mathrm{km/h}$.
+    \item[k)] $3\,\mathrm{m/s}\rightarrow\mathrm{km/h}$.
+    \item[l)] $1.5\,\mathrm{m/s}\rightarrow\mathrm{km/h}$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 16. Calcular densidades}
+
+Pasa la masa a $\mathrm{kg}$ y el volumen a $\mathrm{m^3}$,
+y calcula $\rho=m/V$ en $\mathrm{kg/m^3}$.
+
+\begin{enumerate}
+    \item[a)] $m=540\,\mathrm{g}$, $V=200\,\mathrm{cm^3}$.
+    \item[b)] $m=1.5\,\mathrm{kg}$, $V=1.2\,\mathrm{L}$.
+    \item[c)] $m=79\,\mathrm{g}$, $V=10\,\mathrm{cm^3}$.
+    \item[d)] $m=920\,\mathrm{kg}$, $V=1\,\mathrm{m^3}$.
+    \item[e)] $m=3.4\,\mathrm{kg}$, $V=250\,\mathrm{cm^3}$.
+    \item[f)] $m=45\,\mathrm{g}$, $V=50\,\mathrm{mL}$.
+    \item[g)] $m=2\,\mathrm{t}$, $V=0.8\,\mathrm{m^3}$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 17. Velocidad media}
+
+Pasa la distancia a $\mathrm{m}$ y el tiempo a $\mathrm{s}$,
+calcula $v=d/t$ en $\mathrm{m/s}$ y después pásala a $\mathrm{km/h}$.
+
+\begin{enumerate}
+    \item[a)] $d=100\,\mathrm{m}$, $t=10\,\mathrm{s}$.
+    \item[b)] $d=150\,\mathrm{km}$, $t=2\,\mathrm{h}$.
+    \item[c)] $d=1.2\,\mathrm{km}$, $t=4\,\mathrm{min}$.
+    \item[d)] $d=300\,\mathrm{m}$, $t=1\,\mathrm{min}$.
+    \item[e)] $d=9\,\mathrm{km}$, $t=30\,\mathrm{min}$.
+    \item[f)] $d=400\,\mathrm{m}$, $t=50\,\mathrm{s}$.
+    \item[g)] $d=2.5\,\mathrm{km}$, $t=10\,\mathrm{min}$.
+    \item[h)] $d=42\,\mathrm{km}$,
+    $t=3\,\mathrm{h}\ 30\,\mathrm{min}$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 18. Factores de conversión encadenados}
+
+Convierte. Cambia primero la unidad de arriba y luego la de abajo,
+cada una con su factor.
+
+\begin{enumerate}
+    \item[a)] $3\,\mathrm{L/min}\rightarrow\mathrm{m^3/s}$.
+    \item[b)] $0.5\,\mathrm{m^3/h}\rightarrow\mathrm{L/s}$.
+    \item[c)] $2\,\mathrm{g/L}\rightarrow\mathrm{kg/m^3}$.
+    \item[d)] $25\,\mathrm{mg/mL}\rightarrow\mathrm{g/L}$.
+    \item[e)] $600\,\mathrm{m/min}\rightarrow\mathrm{km/h}$.
+    \item[f)] $1\,\mathrm{m/s}\rightarrow\mathrm{cm/min}$.
+    \item[g)] $1500\,\mathrm{L/h}\rightarrow\mathrm{m^3/s}$.
+    \item[h)] $80\,\mathrm{km/h}\rightarrow\mathrm{m/min}$.
+    \item[i)] $12\,\mathrm{g/cm^3}\rightarrow\mathrm{kg/L}$.
+    \item[j)] $5\,\mathrm{cm/s}\rightarrow\mathrm{km/h}$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 19. Temperatura}
+
+Usa $T(\mathrm{K})=T({}^\circ\mathrm{C})+273$.
+
+\begin{enumerate}
+    \item[a)] $25\,{}^\circ\mathrm{C}\rightarrow\mathrm{K}$.
+    \item[b)] $0\,{}^\circ\mathrm{C}\rightarrow\mathrm{K}$.
+    \item[c)] $-20\,{}^\circ\mathrm{C}\rightarrow\mathrm{K}$.
+    \item[d)] $100\,{}^\circ\mathrm{C}\rightarrow\mathrm{K}$.
+    \item[e)] $37\,{}^\circ\mathrm{C}\rightarrow\mathrm{K}$.
+    \item[f)] $-273\,{}^\circ\mathrm{C}\rightarrow\mathrm{K}$.
+    \item[g)] $15.5\,{}^\circ\mathrm{C}\rightarrow\mathrm{K}$.
+    \item[h)] $300\,\mathrm{K}\rightarrow{}^\circ\mathrm{C}$.
+    \item[i)] $77\,\mathrm{K}\rightarrow{}^\circ\mathrm{C}$.
+    \item[j)] $273\,\mathrm{K}\rightarrow{}^\circ\mathrm{C}$.
+    \item[k)] $0\,\mathrm{K}\rightarrow{}^\circ\mathrm{C}$.
+    \item[l)] $500\,\mathrm{K}\rightarrow{}^\circ\mathrm{C}$.
+    \item[m)] $310\,\mathrm{K}\rightarrow{}^\circ\mathrm{C}$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 20. Ordenar cantidades}
+
+Pasa todas a la misma unidad del SI y ordénalas de menor a mayor.
+
+\begin{enumerate}
+    \item[a)] $3\,\mathrm{km}$, $2500\,\mathrm{m}$,
+    $350\,000\,\mathrm{cm}$, $0.002\,\mathrm{Mm}$.
+    \item[b)] $1.2\,\mathrm{kg}$, $1300\,\mathrm{g}$,
+    $0.0011\,\mathrm{t}$, $900\,000\,\mathrm{mg}$.
+    \item[c)] $2\,\mathrm{h}$, $100\,\mathrm{min}$,
+    $7000\,\mathrm{s}$, $0.1$ días.
+    \item[d)] $1\,\mathrm{L}$, $900\,\mathrm{cm^3}$,
+    $0.0012\,\mathrm{m^3}$, $95\,\mathrm{cL}$.
+    \item[e)] $20\,\mathrm{m/s}$, $70\,\mathrm{km/h}$,
+    $1000\,\mathrm{m/min}$, $0.025\,\mathrm{km/s}$.
+\end{enumerate}
+
+\subsection{4.º ESO: ejercicios 21--30}
+
+\subsubsection*{Ejercicio 21. Unidades derivadas a partir de la fórmula}
+
+Sustituye cada magnitud por su unidad del SI y simplifica hasta dejarlo
+todo en $\mathrm{kg}$, $\mathrm{m}$ y $\mathrm{s}$.
+Los números sueltos ($1/2$) no tienen unidad.
+
+\begin{enumerate}
+    \item[a)] $v=d/t$.
+    \item[b)] $a=\Delta v/t$.
+    \item[c)] $F=ma$.
+    \item[d)] $p=F/S$.
+    \item[e)] $W=Fd$.
+    \item[f)] $P=W/t$.
+    \item[g)] $E_c=\frac{1}{2}mv^2$.
+    \item[h)] $E_p=mgh$.
+    \item[i)] $\rho=m/V$.
+    \item[j)] Cantidad de movimiento $=mv$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 22. Aceleración}
+
+En a)--d) convierte.
+En e)--h) pasa las velocidades a $\mathrm{m/s}$
+y calcula $a=(v-v_0)/t$ en $\mathrm{m/s^2}$.
+
+\begin{enumerate}
+    \item[a)] $980\,\mathrm{cm/s^2}\rightarrow\mathrm{m/s^2}$.
+    \item[b)] $1\,\mathrm{m/s^2}\rightarrow\mathrm{km/h^2}$.
+    \item[c)] $25\,920\,\mathrm{km/h^2}\rightarrow\mathrm{m/s^2}$.
+    \item[d)] $5\,\mathrm{m/s^2}\rightarrow\mathrm{cm/s^2}$.
+    \item[e)] Pasa de $0$ a $100\,\mathrm{km/h}$ en $10\,\mathrm{s}$.
+    \item[f)] Pasa de $72\,\mathrm{km/h}$ a $0$ en $5\,\mathrm{s}$.
+    \item[g)] Pasa de $36\,\mathrm{km/h}$ a $108\,\mathrm{km/h}$
+    en $8\,\mathrm{s}$.
+    \item[h)] Pasa de $18\,\mathrm{km/h}$ a $90\,\mathrm{km/h}$
+    en $4\,\mathrm{s}$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 23. Fuerza y peso}
+
+En a)--d) convierte.
+En e)--i) calcula el peso $P=mg$ en $\mathrm{N}$
+con $g=9.8\,\mathrm{m/s^2}$, pasando antes la masa a $\mathrm{kg}$.
+En j)--k) calcula $F=ma$ en $\mathrm{N}$.
+
+\begin{enumerate}
+    \item[a)] $2.5\,\mathrm{kN}\rightarrow\mathrm{N}$.
+    \item[b)] $350\,\mathrm{mN}\rightarrow\mathrm{N}$.
+    \item[c)] $0.04\,\mathrm{MN}\rightarrow\mathrm{N}$.
+    \item[d)] $12\,000\,\mathrm{N}\rightarrow\mathrm{kN}$.
+    \item[e)] Peso de una masa de $5\,\mathrm{kg}$.
+    \item[f)] Peso de una masa de $250\,\mathrm{g}$.
+    \item[g)] Peso de una masa de $1.2\,\mathrm{t}$.
+    \item[h)] Peso de una masa de $80\,\mathrm{kg}$.
+    \item[i)] Peso de una masa de $600\,\mathrm{mg}$.
+    \item[j)] $F=ma$ con $m=1500\,\mathrm{g}$
+    y $a=4\,\mathrm{m/s^2}$.
+    \item[k)] $F=ma$ con $m=2\,\mathrm{t}$
+    y $a=50\,\mathrm{cm/s^2}$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 24. Presión}
+
+En a)--j) convierte.
+En k)--n) pasa la superficie a $\mathrm{m^2}$
+y calcula la presión en $\mathrm{Pa}$.
+
+\begin{enumerate}
+    \item[a)] $1\,\mathrm{atm}\rightarrow\mathrm{Pa}$.
+    \item[b)] $2\,\mathrm{atm}\rightarrow\mathrm{mmHg}$.
+    \item[c)] $380\,\mathrm{mmHg}\rightarrow\mathrm{atm}$.
+    \item[d)] $1013\,\mathrm{hPa}\rightarrow\mathrm{atm}$.
+    \item[e)] $2.5\,\mathrm{bar}\rightarrow\mathrm{Pa}$.
+    \item[f)] $150\,\mathrm{kPa}\rightarrow\mathrm{bar}$.
+    \item[g)] $202\,650\,\mathrm{Pa}\rightarrow\mathrm{atm}$.
+    \item[h)] $750\,\mathrm{mmHg}\rightarrow\mathrm{Pa}$.
+    \item[i)] $0.5\,\mathrm{atm}\rightarrow\mathrm{hPa}$.
+    \item[j)] $3\,\mathrm{MPa}\rightarrow\mathrm{bar}$.
+    \item[k)] $F=200\,\mathrm{N}$ sobre $S=40\,\mathrm{cm^2}$:
+    calcula $p=F/S$.
+    \item[l)] $F=600\,\mathrm{N}$ sobre $S=2\,\mathrm{cm^2}$:
+    calcula $p=F/S$.
+    \item[m)] $F=10\,\mathrm{kN}$ sobre $S=0.5\,\mathrm{m^2}$:
+    calcula $p=F/S$.
+    \item[n)] $F=50\,\mathrm{N}$ sobre $S=25\,\mathrm{mm^2}$:
+    calcula $p=F/S$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 25. Energía}
+
+Convierte a la unidad indicada. Recuerda que
+\[
+1\,\mathrm{Wh}=1\,\mathrm{W}\cdot3600\,\mathrm{s}
+=3600\,\mathrm{J}.
+\]
+
+\begin{enumerate}
+    \item[a)] $3.5\,\mathrm{kJ}\rightarrow\mathrm{J}$.
+    \item[b)] $2500\,\mathrm{J}\rightarrow\mathrm{kJ}$.
+    \item[c)] $1\,\mathrm{kWh}\rightarrow\mathrm{J}$.
+    \item[d)] $7.2\cdot10^6\,\mathrm{J}\rightarrow\mathrm{kWh}$.
+    \item[e)] $500\,\mathrm{cal}\rightarrow\mathrm{J}$.
+    \item[f)] $2000\,\mathrm{kcal}\rightarrow\mathrm{kJ}$.
+    \item[g)] $4180\,\mathrm{J}\rightarrow\mathrm{cal}$.
+    \item[h)] $1\,\mathrm{kcal}\rightarrow\mathrm{J}$.
+    \item[i)] $250\,\mathrm{Wh}\rightarrow\mathrm{J}$.
+    \item[j)] $1.8\cdot10^7\,\mathrm{J}\rightarrow\mathrm{kWh}$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 26. Potencia}
+
+Convierte o calcula. $P=W/t$ y $W=Pt$.
+
+\begin{enumerate}
+    \item[a)] $2.5\,\mathrm{kW}\rightarrow\mathrm{W}$.
+    \item[b)] $150\,\mathrm{CV}\rightarrow\mathrm{kW}$.
+    \item[c)] $735\,\mathrm{W}\rightarrow\mathrm{CV}$.
+    \item[d)] $90\,\mathrm{kW}\rightarrow\mathrm{CV}$.
+    \item[e)] $3\,\mathrm{MW}\rightarrow\mathrm{W}$.
+    \item[f)] $6000\,\mathrm{J}$ en $1\,\mathrm{min}$:
+    calcula $P=W/t$.
+    \item[g)] $3.6\,\mathrm{kJ}$ en $2\,\mathrm{s}$:
+    calcula $P$.
+    \item[h)] $1\,\mathrm{kWh}$ en $30\,\mathrm{min}$:
+    calcula $P$ en $\mathrm{W}$.
+    \item[i)] Un aparato de $2\,\mathrm{kW}$ funciona $3\,\mathrm{h}$:
+    calcula la energía en $\mathrm{kWh}$ y en $\mathrm{J}$.
+    \item[j)] Una bombilla de $60\,\mathrm{W}$ funciona $1$ día:
+    calcula la energía en $\mathrm{kWh}$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 27. Escalas muy grandes y muy pequeñas}
+
+Trabaja en notación científica.
+Usa $c=3\cdot10^8\,\mathrm{m/s}$ y $1$ año $=365$ días.
+
+\begin{enumerate}
+    \item[a)] Distancia que recorre la luz en $1$ año
+    ($1$ año luz), en $\mathrm{m}$.
+    \item[b)] Tiempo que tarda la luz en recorrer
+    $1.5\cdot10^{11}\,\mathrm{m}$ (Sol--Tierra),
+    en segundos y en minutos y segundos.
+    \item[c)] $4.2$ años luz $\rightarrow\mathrm{m}$.
+    \item[d)] $0.5\,\mu\mathrm{m}\rightarrow\mathrm{nm}$.
+    \item[e)] $2.5\,\mathrm{nm}\rightarrow\mathrm{m}$.
+    \item[f)] $1\,\mathrm{mm^3}\rightarrow\mathrm{m^3}$.
+    \item[g)] $0.1\,\mathrm{mm}\rightarrow\mu\mathrm{m}$.
+    \item[h)] $6.4\cdot10^6\,\mathrm{m}\rightarrow\mathrm{km}$.
+    \item[i)] Tiempo que tarda la luz en recorrer
+    $3.84\cdot10^8\,\mathrm{m}$ (Tierra--Luna), en $\mathrm{s}$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 28. Cifras significativas}
+
+Usa las reglas de la tabla del principio.
+
+\begin{enumerate}
+    \item[a)] ¿Cuántas cifras significativas tiene $3.47$?
+    \item[b)] ¿Cuántas cifras significativas tiene $0.0052$?
+    \item[c)] ¿Cuántas cifras significativas tiene $2.05$?
+    \item[d)] ¿Cuántas cifras significativas tiene $4.50$?
+    \item[e)] ¿Cuántas cifras significativas tiene $6.0\cdot10^3$?
+    \item[f)] ¿Cuántas cifras significativas tiene $100.0$?
+    \item[g)] ¿Cuántas cifras significativas tiene $0.000300$?
+    \item[h)] ¿Cuántas cifras significativas tiene $12.010$?
+    \item[i)] ¿Cuántas cifras significativas tiene $7\cdot10^{-4}$?
+    \item[j)] ¿Cuántas cifras significativas tiene $9.81$?
+    \item[k)] Redondea $3.14159$ a $3$ cifras significativas.
+    \item[l)] Redondea $0.004567$ a $2$ cifras significativas.
+    \item[m)] Redondea $98.76$ a $2$ cifras significativas.
+    \item[n)] Redondea $6.02214\cdot10^{23}$
+    a $3$ cifras significativas.
+    \item[o)] Redondea $2.3456$ a $3$ cifras significativas.
+    \item[p)] Redondea $0.07049$ a $2$ cifras significativas.
+    \item[q)] Redondea $299\,792\,458$ a $3$ cifras significativas.
+    \item[r)] Redondea $12.348$ a $4$ cifras significativas.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 29. Operaciones con cifras significativas}
+
+Haz la operación con la calculadora y redondea el resultado según las reglas.
+
+\begin{enumerate}
+    \item[a)] $2.6\cdot3.14$.
+    \item[b)] $4.56\cdot1.4$.
+    \item[c)] $9.876/3.1$.
+    \item[d)] $12.11+0.3$.
+    \item[e)] $100.5-2.27$.
+    \item[f)] $0.0250\cdot4.00$.
+    \item[g)] $(6.0\cdot10^3)\cdot2.15$.
+    \item[h)] $15.0/0.41$.
+    \item[i)] $3.2+4.115+0.37$.
+    \item[j)] $2.000\cdot0.333$.
+\end{enumerate}
+
+\subsubsection*{Ejercicio 30. Homogeneidad de ecuaciones}
+
+Una ecuación es correcta solo si los dos lados tienen la misma unidad.
+Escribe la unidad del lado izquierdo y la del lado derecho,
+y responde sí o no: ¿es homogénea?
+
+\begin{enumerate}
+    \item[a)] $d=vt$.
+    \item[b)] $d=vt^2$.
+    \item[c)] $v=at$.
+    \item[d)] $F=mv$.
+    \item[e)] $E_c=\frac{1}{2}mv^2$.
+    \item[f)] $p=FS$.
+    \item[g)] $x=x_0+vt+\frac{1}{2}at^2$.
+    \item[h)] $v^2=v_0^2+2ad$.
+    \item[i)] $W=P/t$.
+    \item[j)] $t=d/v$.
+\end{enumerate}
+
+\subsection{Soluciones de 3.º ESO}
+
+\subsubsection*{1. Unidades del SI}
+\begin{enumerate}
+    \item[a)] Metro ($\mathrm{m}$).
+    \item[b)] Kilogramo ($\mathrm{kg}$).
+    \item[c)] Segundo ($\mathrm{s}$).
+    \item[d)] Kelvin ($\mathrm{K}$).
+    \item[e)] Amperio ($\mathrm{A}$).
+    \item[f)] Mol ($\mathrm{mol}$).
+    \item[g)] Candela ($\mathrm{cd}$).
+    \item[h)] $\mathrm{m^2}$.
+    \item[i)] $\mathrm{m^3}$.
+    \item[j)] $\mathrm{m/s}$.
+    \item[k)] $\mathrm{m/s^2}$.
+    \item[l)] $\mathrm{kg/m^3}$.
+\end{enumerate}
+
+\subsubsection*{2. Prefijos}
+\begin{enumerate}
+    \item[a)] $\mathrm{k}$, $10^3$.
+    \item[b)] $\mathrm{M}$, $10^6$.
+    \item[c)] $\mu$, $10^{-6}$.
+    \item[d)] $\mathrm{c}$, $10^{-2}$.
+    \item[e)] $\mathrm{G}$, $10^9$.
+    \item[f)] $\mathrm{m}$, $10^{-3}$.
+    \item[g)] $\mathrm{h}$, $10^2$.
+    \item[h)] $\mathrm{n}$, $10^{-9}$.
+    \item[i)] $\mathrm{d}$, $10^{-1}$.
+    \item[j)] $\mathrm{da}$, $10$.
+    \item[k)] Mili ($\mathrm{m}$).
+    \item[l)] Mega ($\mathrm{M}$).
+    \item[m)] Nano ($\mathrm{n}$).
+    \item[n)] Hecto ($\mathrm{h}$).
+    \item[o)] Micro ($\mu$).
+    \item[p)] Tera ($\mathrm{T}$).
+\end{enumerate}
+
+\subsubsection*{3. Escribir en notación científica}
+\begin{enumerate}
+    \item[a)] $4.5\cdot10^4$.
+    \item[b)] $3.2\cdot10^{-3}$.
+    \item[c)] $6.02\cdot10^6$.
+    \item[d)] $8.1\cdot10^{-7}$.
+    \item[e)] $1.234\cdot10^2$.
+    \item[f)] $5\cdot10^{-1}$.
+    \item[g)] $3\cdot10^8$.
+    \item[h)] $4.5\cdot10^{-5}$.
+    \item[i)] $9.87\cdot10^9$.
+    \item[j)] $7\cdot10^{-2}$.
+\end{enumerate}
+
+\subsubsection*{4. Pasar de notación científica a número decimal}
+\begin{enumerate}
+    \item[a)] $2500$.
+    \item[b)] $0.07$.
+    \item[c)] $108\,000$.
+    \item[d)] $0.00043$.
+    \item[e)] $99.9$.
+    \item[f)] $6$.
+    \item[g)] $3\,001\,000$.
+    \item[h)] $0.00000052$.
+\end{enumerate}
+
+\subsubsection*{5. Operaciones en notación científica}
+\begin{enumerate}
+    \item[a)] $6\cdot10^7$.
+    \item[b)] $2\cdot10^5$.
+    \item[c)] $4\cdot10^6$.
+    \item[d)] $2\cdot10^{-7}$.
+    \item[e)] $1\cdot10^{-4}$.
+    \item[f)] $2\cdot10^{10}$.
+    \item[g)] $3.6\cdot10^9$.
+    \item[h)] $3.5\cdot10^{-9}$.
+\end{enumerate}
+
+\subsubsection*{6. Longitud}
+\begin{enumerate}
+    \item[a)] $3500\,\mathrm{m}$.
+    \item[b)] $2.5\,\mathrm{m}$.
+    \item[c)] $0.004\,\mathrm{m}$.
+    \item[d)] $75\,\mathrm{cm}$.
+    \item[e)] $120\,\mathrm{m}$.
+    \item[f)] $0.008\,\mathrm{km}$.
+    \item[g)] $2300\,\mathrm{dm}$.
+    \item[h)] $0.00056\,\mathrm{m}$.
+    \item[i)] $4.5\cdot10^{-8}\,\mathrm{m}$.
+    \item[j)] $600\,\mathrm{cm}$.
+\end{enumerate}
+
+\subsubsection*{7. Masa}
+\begin{enumerate}
+    \item[a)] $2400\,\mathrm{g}$.
+    \item[b)] $0.35\,\mathrm{kg}$.
+    \item[c)] $0.075\,\mathrm{g}$.
+    \item[d)] $1500\,\mathrm{kg}$.
+    \item[e)] $80\,000\,\mathrm{mg}$.
+    \item[f)] $4.5\,\mathrm{kg}$.
+    \item[g)] $1.2\,\mathrm{kg}$.
+    \item[h)] $0.0006\,\mathrm{g}$.
+    \item[i)] $30\,\mathrm{g}$.
+    \item[j)] $2.5\,\mathrm{g}$.
+\end{enumerate}
+
+\subsubsection*{8. Tiempo}
+\begin{enumerate}
+    \item[a)] $7200\,\mathrm{s}$.
+    \item[b)] $2700\,\mathrm{s}$.
+    \item[c)] $1\,\mathrm{h}$.
+    \item[d)] $90\,\mathrm{min}$.
+    \item[e)] $86\,400\,\mathrm{s}$.
+    \item[f)] $1.5\,\mathrm{h}$.
+    \item[g)] $120\,\mathrm{min}$.
+    \item[h)] $900\,\mathrm{s}$.
+    \item[i)] $604\,800\,\mathrm{s}$.
+    \item[j)] $0.5\,\mathrm{min}$.
+    \item[k)] $8130\,\mathrm{s}$.
+    \item[l)] $76\,\mathrm{h}$.
+    \item[m)] $2\,\mathrm{h}\ 46\,\mathrm{min}\ 40\,\mathrm{s}$.
+\end{enumerate}
+
+\subsubsection*{9. Capacidad}
+\begin{enumerate}
+    \item[a)] $2500\,\mathrm{mL}$.
+    \item[b)] $0.75\,\mathrm{L}$.
+    \item[c)] $300\,\mathrm{L}$.
+    \item[d)] $0.45\,\mathrm{L}$.
+    \item[e)] $20\,\mathrm{cL}$.
+    \item[f)] $1.5\,\mathrm{L}$.
+    \item[g)] $800\,\mathrm{mL}$.
+    \item[h)] $50\,\mathrm{L}$.
+\end{enumerate}
+
+\subsubsection*{10. Al SI en notación científica}
+\begin{enumerate}
+    \item[a)] $2.5\cdot10^4\,\mathrm{m}$.
+    \item[b)] $3\cdot10^{-3}\,\mathrm{s}$.
+    \item[c)] $4.5\cdot10^{-4}\,\mathrm{kg}$.
+    \item[d)] $7.2\cdot10^3\,\mathrm{s}$.
+    \item[e)] $5\cdot10^{-6}\,\mathrm{s}$.
+    \item[f)] $6.2\cdot10^9\,\mathrm{m}$.
+    \item[g)] $3\cdot10^{-7}\,\mathrm{m}$.
+    \item[h)] $8\cdot10^3\,\mathrm{kg}$.
+    \item[i)] $9\cdot10^2\,\mathrm{s}$.
+    \item[j)] $4\cdot10^{-4}\,\mathrm{kg}$.
+\end{enumerate}
+
+\subsubsection*{11. Superficie}
+\begin{enumerate}
+    \item[a)] $30\,000\,\mathrm{cm^2}$.
+    \item[b)] $2.5\,\mathrm{m^2}$.
+    \item[c)] $4\,000\,000\,\mathrm{m^2}$.
+    \item[d)] $0.025\,\mathrm{m^2}$.
+    \item[e)] $8\,\mathrm{cm^2}$.
+    \item[f)] $10\,000\,\mathrm{m^2}$.
+    \item[g)] $35\,\mathrm{dm^2}$.
+    \item[h)] $0.006\,\mathrm{km^2}$.
+    \item[i)] $0.0012\,\mathrm{m^2}$.
+    \item[j)] $0.032\,\mathrm{km^2}$.
+\end{enumerate}
+
+\subsubsection*{12. Volumen}
+\begin{enumerate}
+    \item[a)] $2000\,\mathrm{dm^3}$.
+    \item[b)] $0.005\,\mathrm{m^3}$.
+    \item[c)] $400\,\mathrm{cm^3}$.
+    \item[d)] $3\,\mathrm{cm^3}$.
+    \item[e)] $1\,200\,000\,\mathrm{cm^3}$.
+    \item[f)] $0.25\,\mathrm{dm^3}$.
+    \item[g)] $7\,000\,000\,\mathrm{m^3}$.
+    \item[h)] $0.045\,\mathrm{m^3}$.
+    \item[i)] $8000\,\mathrm{mm^3}$.
+    \item[j)] $0.6\,\mathrm{m^3}$.
+\end{enumerate}
+
+\subsubsection*{13. Volumen y capacidad}
+\begin{enumerate}
+    \item[a)] $1\,\mathrm{dm^3}$.
+    \item[b)] $1\,\mathrm{cm^3}$.
+    \item[c)] $2000\,\mathrm{L}$.
+    \item[d)] $0.5\,\mathrm{L}$.
+    \item[e)] $3500\,\mathrm{cm^3}$.
+    \item[f)] $0.00025\,\mathrm{m^3}$.
+    \item[g)] $800\,\mathrm{mL}$.
+    \item[h)] $0.012\,\mathrm{m^3}$.
+    \item[i)] $4.5\,\mathrm{L}$.
+    \item[j)] $1\,000\,000\,\mathrm{mL}$.
+    \item[k)] $750\,\mathrm{cm^3}$.
+    \item[l)] $2000\,\mathrm{mL}$.
+\end{enumerate}
+
+\subsubsection*{14. Densidad}
+\begin{enumerate}
+    \item[a)] $1000\,\mathrm{kg/m^3}$.
+    \item[b)] $2700\,\mathrm{kg/m^3}$.
+    \item[c)] $13\,600\,\mathrm{kg/m^3}$.
+    \item[d)] $800\,\mathrm{kg/m^3}$.
+    \item[e)] $7.8\,\mathrm{g/cm^3}$.
+    \item[f)] $1\,\mathrm{g/cm^3}$.
+    \item[g)] $0.92\,\mathrm{g/cm^3}$.
+    \item[h)] $19.3\,\mathrm{g/cm^3}$.
+    \item[i)] $1.03\,\mathrm{kg/L}=1030\,\mathrm{kg/m^3}$.
+    \item[j)] $1.3\,\mathrm{kg/m^3}$.
+\end{enumerate}
+
+\subsubsection*{15. Velocidad}
+\begin{enumerate}
+    \item[a)] $10\,\mathrm{m/s}$.
+    \item[b)] $20\,\mathrm{m/s}$.
+    \item[c)] $25\,\mathrm{m/s}$.
+    \item[d)] $\approx33.33\,\mathrm{m/s}$.
+    \item[e)] $15\,\mathrm{m/s}$.
+    \item[f)] $5\,\mathrm{m/s}$.
+    \item[g)] $\approx27.78\,\mathrm{m/s}$.
+    \item[h)] $36\,\mathrm{km/h}$.
+    \item[i)] $90\,\mathrm{km/h}$.
+    \item[j)] $1224\,\mathrm{km/h}$.
+    \item[k)] $10.8\,\mathrm{km/h}$.
+    \item[l)] $5.4\,\mathrm{km/h}$.
+\end{enumerate}
+
+\subsubsection*{16. Calcular densidades}
+\begin{enumerate}
+    \item[a)] $m=0.54\,\mathrm{kg}$,
+    $V=0.0002\,\mathrm{m^3}$,
+    $\rho=2700\,\mathrm{kg/m^3}$.
+
+    \item[b)] $m=1.5\,\mathrm{kg}$,
+    $V=0.0012\,\mathrm{m^3}$,
+    $\rho=1250\,\mathrm{kg/m^3}$.
+
+    \item[c)] $m=0.079\,\mathrm{kg}$,
+    $V=1\cdot10^{-5}\,\mathrm{m^3}$,
+    $\rho=7900\,\mathrm{kg/m^3}$.
+
+    \item[d)] $m=920\,\mathrm{kg}$,
+    $V=1\,\mathrm{m^3}$,
+    $\rho=920\,\mathrm{kg/m^3}$.
+
+    \item[e)] $m=3.4\,\mathrm{kg}$,
+    $V=0.00025\,\mathrm{m^3}$,
+    $\rho=13\,600\,\mathrm{kg/m^3}$.
+
+    \item[f)] $m=0.045\,\mathrm{kg}$,
+    $V=5\cdot10^{-5}\,\mathrm{m^3}$,
+    $\rho=900\,\mathrm{kg/m^3}$.
+
+    \item[g)] $m=2000\,\mathrm{kg}$,
+    $V=0.8\,\mathrm{m^3}$,
+    $\rho=2500\,\mathrm{kg/m^3}$.
+\end{enumerate}
+
+\subsubsection*{17. Velocidad media}
+\begin{enumerate}
+    \item[a)] $100\,\mathrm{m}$, $10\,\mathrm{s}$;
+    $v=10\,\mathrm{m/s}=36\,\mathrm{km/h}$.
+
+    \item[b)] $150\,000\,\mathrm{m}$, $7200\,\mathrm{s}$;
+    $v\approx20.83\,\mathrm{m/s}=75\,\mathrm{km/h}$.
+
+    \item[c)] $1200\,\mathrm{m}$, $240\,\mathrm{s}$;
+    $v=5\,\mathrm{m/s}=18\,\mathrm{km/h}$.
+
+    \item[d)] $300\,\mathrm{m}$, $60\,\mathrm{s}$;
+    $v=5\,\mathrm{m/s}=18\,\mathrm{km/h}$.
+
+    \item[e)] $9000\,\mathrm{m}$, $1800\,\mathrm{s}$;
+    $v=5\,\mathrm{m/s}=18\,\mathrm{km/h}$.
+
+    \item[f)] $400\,\mathrm{m}$, $50\,\mathrm{s}$;
+    $v=8\,\mathrm{m/s}=28.8\,\mathrm{km/h}$.
+
+    \item[g)] $2500\,\mathrm{m}$, $600\,\mathrm{s}$;
+    $v\approx4.17\,\mathrm{m/s}=15\,\mathrm{km/h}$.
+
+    \item[h)] $42\,000\,\mathrm{m}$, $12\,600\,\mathrm{s}$;
+    $v\approx3.33\,\mathrm{m/s}=12\,\mathrm{km/h}$.
+\end{enumerate}
+
+\subsubsection*{18. Factores de conversión encadenados}
+\begin{enumerate}
+    \item[a)] $5\cdot10^{-5}\,\mathrm{m^3/s}$.
+    \item[b)] $\approx0.1389\,\mathrm{L/s}$.
+    \item[c)] $2\,\mathrm{kg/m^3}$.
+    \item[d)] $25\,\mathrm{g/L}$.
+    \item[e)] $36\,\mathrm{km/h}$.
+    \item[f)] $6000\,\mathrm{cm/min}$.
+    \item[g)] $\approx4.167\cdot10^{-4}\,\mathrm{m^3/s}$.
+    \item[h)] $\approx1333.33\,\mathrm{m/min}$.
+    \item[i)] $12\,\mathrm{kg/L}$.
+    \item[j)] $0.18\,\mathrm{km/h}$.
+\end{enumerate}
+
+\subsubsection*{19. Temperatura}
+\begin{enumerate}
+    \item[a)] $298\,\mathrm{K}$.
+    \item[b)] $273\,\mathrm{K}$.
+    \item[c)] $253\,\mathrm{K}$.
+    \item[d)] $373\,\mathrm{K}$.
+    \item[e)] $310\,\mathrm{K}$.
+    \item[f)] $0\,\mathrm{K}$.
+    \item[g)] $288.5\,\mathrm{K}$.
+    \item[h)] $27\,{}^\circ\mathrm{C}$.
+    \item[i)] $-196\,{}^\circ\mathrm{C}$.
+    \item[j)] $0\,{}^\circ\mathrm{C}$.
+    \item[k)] $-273\,{}^\circ\mathrm{C}$.
+    \item[l)] $227\,{}^\circ\mathrm{C}$.
+    \item[m)] $37\,{}^\circ\mathrm{C}$.
+\end{enumerate}
+
+\subsubsection*{20. Ordenar cantidades}
+\begin{enumerate}
+    \item[a)]
+    $0.002\,\mathrm{Mm}<2500\,\mathrm{m}<3\,\mathrm{km}
+    <350\,000\,\mathrm{cm}$.
+
+    En $\mathrm{m}$: $2000$, $2500$, $3000$, $3500$.
+
+    \item[b)]
+    $900\,000\,\mathrm{mg}<0.0011\,\mathrm{t}<1.2\,\mathrm{kg}
+    <1300\,\mathrm{g}$.
+
+    En $\mathrm{kg}$: $0.9$, $1.1$, $1.2$, $1.3$.
+
+    \item[c)]
+    $100\,\mathrm{min}<7000\,\mathrm{s}<2\,\mathrm{h}<0.1$ días.
+
+    En $\mathrm{s}$: $6000$, $7000$, $7200$, $8640$.
+
+    \item[d)]
+    $900\,\mathrm{cm^3}<95\,\mathrm{cL}<1\,\mathrm{L}
+    <0.0012\,\mathrm{m^3}$.
+
+    En $\mathrm{m^3}$: $0.0009$, $0.00095$, $0.001$, $0.0012$.
+
+    \item[e)]
+    $1000\,\mathrm{m/min}<70\,\mathrm{km/h}<20\,\mathrm{m/s}
+    <0.025\,\mathrm{km/s}$.
+
+    En $\mathrm{m/s}$: $\approx16.67$, $\approx19.44$, $20$, $25$.
+\end{enumerate}
+
+\subsection{Soluciones de 4.º ESO}
+
+\subsubsection*{21. Unidades derivadas a partir de la fórmula}
+\begin{enumerate}
+    \item[a)] $\mathrm{m/s}$.
+    \item[b)] $\mathrm{m/s^2}$.
+    \item[c)] $\mathrm{kg\cdot m/s^2}$ ($=\mathrm{N}$).
+    \item[d)] $\mathrm{kg/(m\cdot s^2)}$ ($=\mathrm{Pa}$).
+    \item[e)] $\mathrm{kg\cdot m^2/s^2}$ ($=\mathrm{J}$).
+    \item[f)] $\mathrm{kg\cdot m^2/s^3}$ ($=\mathrm{W}$).
+    \item[g)] $\mathrm{kg\cdot m^2/s^2}$ ($=\mathrm{J}$).
+    \item[h)] $\mathrm{kg\cdot m^2/s^2}$ ($=\mathrm{J}$).
+    \item[i)] $\mathrm{kg/m^3}$.
+    \item[j)] $\mathrm{kg\cdot m/s}$.
+\end{enumerate}
+
+\subsubsection*{22. Aceleración}
+\begin{enumerate}
+    \item[a)] $9.8\,\mathrm{m/s^2}$.
+    \item[b)] $12\,960\,\mathrm{km/h^2}$.
+    \item[c)] $2\,\mathrm{m/s^2}$.
+    \item[d)] $500\,\mathrm{cm/s^2}$.
+    \item[e)] $v_0=0\,\mathrm{m/s}$,
+    $v\approx27.78\,\mathrm{m/s}$,
+    $a\approx2.78\,\mathrm{m/s^2}$.
+    \item[f)] $v_0=20\,\mathrm{m/s}$,
+    $v=0\,\mathrm{m/s}$,
+    $a=-4\,\mathrm{m/s^2}$.
+    \item[g)] $v_0=10\,\mathrm{m/s}$,
+    $v=30\,\mathrm{m/s}$,
+    $a=2.5\,\mathrm{m/s^2}$.
+    \item[h)] $v_0=5\,\mathrm{m/s}$,
+    $v=25\,\mathrm{m/s}$,
+    $a=5\,\mathrm{m/s^2}$.
+\end{enumerate}
+
+\subsubsection*{23. Fuerza y peso}
+\begin{enumerate}
+    \item[a)] $2500\,\mathrm{N}$.
+    \item[b)] $0.35\,\mathrm{N}$.
+    \item[c)] $40\,000\,\mathrm{N}$.
+    \item[d)] $12\,\mathrm{kN}$.
+    \item[e)] $m=5\,\mathrm{kg}$, $P=49\,\mathrm{N}$.
+    \item[f)] $m=0.25\,\mathrm{kg}$, $P=2.45\,\mathrm{N}$.
+    \item[g)] $m=1200\,\mathrm{kg}$, $P=11\,760\,\mathrm{N}$.
+    \item[h)] $m=80\,\mathrm{kg}$, $P=784\,\mathrm{N}$.
+    \item[i)] $m=0.0006\,\mathrm{kg}$, $P=0.00588\,\mathrm{N}$.
+    \item[j)] $F=6\,\mathrm{N}$.
+    \item[k)] $F=1000\,\mathrm{N}$.
+\end{enumerate}
+
+\subsubsection*{24. Presión}
+\begin{enumerate}
+    \item[a)] $101\,325\,\mathrm{Pa}$.
+    \item[b)] $1520\,\mathrm{mmHg}$.
+    \item[c)] $0.5\,\mathrm{atm}$.
+    \item[d)] $\approx0.9998\,\mathrm{atm}$.
+    \item[e)] $250\,000\,\mathrm{Pa}$.
+    \item[f)] $1.5\,\mathrm{bar}$.
+    \item[g)] $2\,\mathrm{atm}$.
+    \item[h)] $\approx99\,991.78\,\mathrm{Pa}$.
+    \item[i)] $506.625\,\mathrm{hPa}$.
+    \item[j)] $30\,\mathrm{bar}$.
+    \item[k)] $S=0.004\,\mathrm{m^2}$, $p=50\,000\,\mathrm{Pa}$.
+    \item[l)] $S=0.0002\,\mathrm{m^2}$, $p=3\cdot10^6\,\mathrm{Pa}$.
+    \item[m)] $S=0.5\,\mathrm{m^2}$, $p=20\,000\,\mathrm{Pa}$.
+    \item[n)] $S=2.5\cdot10^{-5}\,\mathrm{m^2}$,
+    $p=2\cdot10^6\,\mathrm{Pa}$.
+\end{enumerate}
+
+\subsubsection*{25. Energía}
+\begin{enumerate}
+    \item[a)] $3500\,\mathrm{J}$.
+    \item[b)] $2.5\,\mathrm{kJ}$.
+    \item[c)] $3.6\cdot10^6\,\mathrm{J}$.
+    \item[d)] $2\,\mathrm{kWh}$.
+    \item[e)] $2090\,\mathrm{J}$.
+    \item[f)] $8360\,\mathrm{kJ}$.
+    \item[g)] $1000\,\mathrm{cal}$.
+    \item[h)] $4180\,\mathrm{J}$.
+    \item[i)] $900\,000\,\mathrm{J}$.
+    \item[j)] $5\,\mathrm{kWh}$.
+\end{enumerate}
+
+\subsubsection*{26. Potencia}
+\begin{enumerate}
+    \item[a)] $2500\,\mathrm{W}$.
+    \item[b)] $110.25\,\mathrm{kW}$.
+    \item[c)] $1\,\mathrm{CV}$.
+    \item[d)] $\approx122.45\,\mathrm{CV}$.
+    \item[e)] $3\cdot10^6\,\mathrm{W}$.
+    \item[f)] $100\,\mathrm{W}$.
+    \item[g)] $1800\,\mathrm{W}$.
+    \item[h)] $2000\,\mathrm{W}$.
+    \item[i)] $6\,\mathrm{kWh}=2.16\cdot10^7\,\mathrm{J}$.
+    \item[j)] $1.44\,\mathrm{kWh}$.
+\end{enumerate}
+
+\subsubsection*{27. Escalas muy grandes y muy pequeñas}
+\begin{enumerate}
+    \item[a)] $\approx9.461\cdot10^{15}\,\mathrm{m}$.
+    \item[b)] $500\,\mathrm{s}=8\,\mathrm{min}\ 20\,\mathrm{s}$.
+    \item[c)] $\approx3.974\cdot10^{16}\,\mathrm{m}$.
+    \item[d)] $500\,\mathrm{nm}$.
+    \item[e)] $2.5\cdot10^{-9}\,\mathrm{m}$.
+    \item[f)] $1\cdot10^{-9}\,\mathrm{m^3}$.
+    \item[g)] $100\,\mu\mathrm{m}$.
+    \item[h)] $6400\,\mathrm{km}$.
+    \item[i)] $1.28\,\mathrm{s}$.
+\end{enumerate}
+
+\subsubsection*{28. Cifras significativas}
+\begin{enumerate}
+    \item[a)] $3$.
+    \item[b)] $2$.
+    \item[c)] $3$.
+    \item[d)] $3$.
+    \item[e)] $2$.
+    \item[f)] $4$.
+    \item[g)] $3$.
+    \item[h)] $5$.
+    \item[i)] $1$.
+    \item[j)] $3$.
+    \item[k)] $3.14$.
+    \item[l)] $0.0046$.
+    \item[m)] $99$.
+    \item[n)] $6.02\cdot10^{23}$.
+    \item[o)] $2.35$.
+    \item[p)] $0.070$.
+    \item[q)] $3.00\cdot10^8$.
+    \item[r)] $12.35$.
+\end{enumerate}
+
+\subsubsection*{29. Operaciones con cifras significativas}
+\begin{enumerate}
+    \item[a)] $8.164\rightarrow8.2$ ($2$ cifras).
+    \item[b)] $6.384\rightarrow6.4$ ($2$ cifras).
+    \item[c)] $3.1858\ldots\rightarrow3.2$ ($2$ cifras).
+    \item[d)] $12.41\rightarrow12.4$ ($1$ decimal).
+    \item[e)] $98.23\rightarrow98.2$ ($1$ decimal).
+    \item[f)] $0.1\rightarrow0.100$ ($3$ cifras).
+    \item[g)] $12\,900\rightarrow1.3\cdot10^4$ ($2$ cifras).
+    \item[h)] $36.585\ldots\rightarrow37$ ($2$ cifras).
+    \item[i)] $7.685\rightarrow7.7$ ($1$ decimal).
+    \item[j)] $0.666\rightarrow0.666$ ($3$ cifras).
+\end{enumerate}
+
+\subsubsection*{30. Homogeneidad de ecuaciones}
+\begin{enumerate}
+    \item[a)] Izquierda: $\mathrm{m}$.
+    Derecha: $\mathrm{m/s}\cdot\mathrm{s}=\mathrm{m}$.
+    Sí.
+
+    \item[b)] Izquierda: $\mathrm{m}$.
+    Derecha: $\mathrm{m/s}\cdot\mathrm{s^2}=\mathrm{m\cdot s}$.
+    No.
+
+    \item[c)] Izquierda: $\mathrm{m/s}$.
+    Derecha: $\mathrm{m/s^2}\cdot\mathrm{s}=\mathrm{m/s}$.
+    Sí.
+
+    \item[d)] Izquierda: $\mathrm{kg\cdot m/s^2}$.
+    Derecha: $\mathrm{kg}\cdot\mathrm{m/s}=\mathrm{kg\cdot m/s}$.
+    No.
+
+    \item[e)] Izquierda:
+    $\mathrm{J}=\mathrm{kg\cdot m^2/s^2}$.
+    Derecha:
+    $\mathrm{kg}\cdot\mathrm{m^2/s^2}=\mathrm{kg\cdot m^2/s^2}$.
+    Sí.
+
+    \item[f)] Izquierda:
+    $\mathrm{Pa}=\mathrm{kg/(m\cdot s^2)}$.
+    Derecha:
+    $\mathrm{kg\cdot m/s^2}\cdot\mathrm{m^2}
+    =\mathrm{kg\cdot m^3/s^2}$.
+    No.
+
+    \item[g)] Izquierda: $\mathrm{m}$.
+    Derecha: $\mathrm{m}+\mathrm{m}+\mathrm{m}$.
+    Sí.
+
+    \item[h)] Izquierda: $\mathrm{m^2/s^2}$.
+    Derecha: $\mathrm{m^2/s^2}+\mathrm{m^2/s^2}$.
+    Sí.
+
+    \item[i)] Izquierda:
+    $\mathrm{J}=\mathrm{kg\cdot m^2/s^2}$.
+    Derecha:
+    $\dfrac{\mathrm{kg\cdot m^2/s^3}}{\mathrm{s}}
+    =\mathrm{kg\cdot m^2/s^4}$.
+    No.
+
+    \item[j)] Izquierda: $\mathrm{s}$.
+    Derecha:
+    $\dfrac{\mathrm{m}}{\mathrm{m/s}}=\mathrm{s}$.
+    Sí.
+\end{enumerate}
