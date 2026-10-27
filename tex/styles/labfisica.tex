@@ -5,19 +5,38 @@
 
 \usepackage{keyval}
 
-% --- Metadatos de sesión -------------------------------------------
-% Cada carpeta chapters/contents/sessio_XX/ tiene un meta.tex con:
+% --- Metadatos de una unidad ---------------------------------------
+% Una "unidad" es una sesión (chapters/contents/sessio_XX/) o un
+% cuadernillo (quaderns/XXX/). Las dos llevan su meta.tex:
 %
 %   \sessioMeta{
-%     numero = 1,
-%     titol  = {Títol en català},
-%     data   = {2026-09-14},
-%     blocs  = {materia},
-%     estat  = {publicat}
+%     numero    = 1,
+%     titol     = {Títol en català},
+%     data      = {2026-09-14},
+%     trimestre = {1},
+%     blocs     = {materia},
+%     estat     = {publicat},
+%     solucions = {ocult},
+%     resum     = {Una línia per al índex de la web.}
 %   }
 %
 % El mismo fichero lo leerá el generador web, así que la fecha va
 % siempre en formato ISO (aaaa-mm-dd) y se formatea al imprimir.
+%
+%   estat      publicat | esborrany   -> si se renderiza y se publica
+%   solucions  ocult    | publicat    -> si el índice enlaza el PDF de solucions
+%   trimestre  1 | 2 | 3              -> para agrupar en cuadernillos
+%   resum                             -> una línea, para el índice de la web
+%   numero                            -> vacío en un cuadernillo: no es una sessió
+%   pdf                               -> ver abajo
+%
+% CAMPO pdf: para unidades SIN fuente LaTeX, maquetadas a mano (Affinity).
+%
+%   pdf = {quimica_t1.pdf}
+%
+% Si está presente, no hay nada que compilar: ese PDF es el original y es
+% irrecuperable. El generador web lo publica tal cual y el .gitignore tiene
+% una excepción para versionarlo. Ver tex/quaderns/README.md.
 
 \makeatletter
 
@@ -26,6 +45,10 @@
 \define@key{sessio}{data}  {\def\sessioData{#1}}
 \define@key{sessio}{blocs} {\def\sessioBlocs{#1}}
 \define@key{sessio}{estat} {\def\sessioEstat{#1}}
+\define@key{sessio}{trimestre}{\def\sessioTrimestre{#1}}
+\define@key{sessio}{solucions}{\def\sessioSolucions{#1}}
+\define@key{sessio}{resum}    {\def\sessioResum{#1}}
+\define@key{sessio}{pdf}      {\def\sessioPdf{#1}}
 
 \newcommand{\sessioMeta}[1]{\setkeys{sessio}{#1}}
 
@@ -34,37 +57,75 @@
 \newcommand{\lf@data}{\expandafter\lf@datailegible\sessioData\@nil}
 
 \newcommand{\lf@publicat}{publicat}
+\newcommand{\lf@buit}{}
 
-% --- Partes de una sesión ------------------------------------------
-% Obligatorias: continguts y activitats. Opcional: investiga (al final).
-\newcommand{\lf@obligatoria}[2]{%
-  \IfFileExists{chapters/contents/#1/#2.tex}%
-    {\input{chapters/contents/#1/#2.tex}}%
-    {\GenericWarning{}{labfisica: falta el fichero obligatorio #1/#2.tex}}%
+% Valores por defecto. Se aplican antes de leer cada meta.tex, para que
+% una clave ausente no herede el valor de la unidad anterior.
+\newcommand{\lf@reset}{%
+  \def\sessioNumero{}\def\sessioTitol{}\def\sessioData{0000-00-00}%
+  \def\sessioBlocs{}\def\sessioEstat{esborrany}%
+  \def\sessioTrimestre{}\def\sessioSolucions{ocult}\def\sessioResum{}%
+  \def\sessioPdf{}%
 }
-\newcommand{\lf@opcional}[2]{%
-  \IfFileExists{chapters/contents/#1/#2.tex}%
-    {\input{chapters/contents/#1/#2.tex}}{}%
+
+% --- Carga de ficheros ---------------------------------------------
+% Reciben la ruta COMPLETA sin extensión, relativa al directorio de
+% compilación (tex/). Así valen igual para sesiones y cuadernillos.
+\newcommand{\lf@obl}[1]{%
+  \IfFileExists{#1.tex}%
+    {\input{#1.tex}}%
+    {\GenericWarning{}{labfisica: falta el fichero obligatorio #1.tex}}%
+}
+\newcommand{\lf@opc}[1]{%
+  \IfFileExists{#1.tex}{\input{#1.tex}}{}%
+}
+
+% Las dos formas de citar una imagen valen: foto.jpg (histórico) y
+% images/foto.jpg.
+\newcommand{\lf@imatges}[1]{\graphicspath{{#1/images/}{#1/}{}}}
+
+% Cabecera: "Sessió 1. Títol" si hay número; solo "Títol" si no lo hay
+% (un cuadernillo no es una sessió).
+\newcommand{\lf@capcalera}{%
+  \ifx\sessioNumero\lf@buit
+    \chapter{\sessioTitol}%
+  \else
+    \chapter{Sessió \sessioNumero. \sessioTitol}%
+  \fi
 }
 
 % --- \sessio{sessio_01} --------------------------------------------
-% Lee los metadatos, escribe la cabecera y monta las partes en orden.
-% Las sesiones con estat distinto de "publicat" no se renderizan.
+% Monta una sesión entera dentro del dossier: cabecera y partes en orden.
+% Las sesiones con estat distinto de "publicat" NO se renderizan.
 \newcommand{\sessio}[1]{%
-  \def\sessioNumero{?}\def\sessioTitol{}\def\sessioData{0000-00-00}%
-  \def\sessioBlocs{}\def\sessioEstat{esborrany}%
-  \lf@obligatoria{#1}{meta}%
+  \lf@reset
+  \lf@obl{chapters/contents/#1/meta}%
   \ifx\sessioEstat\lf@publicat
-    % Así los ficheros de contenido citan solo images/foto.jpg
-    \graphicspath{{chapters/contents/#1/}{}}%
-    \chapter{Sessió \sessioNumero. \sessioTitol}%
-    %{\small\textit{\lf@data}\par}%
-    \lf@obligatoria{#1}{continguts}%
-    \lf@obligatoria{#1}{activitats}%
-    \lf@opcional{#1}{investiga}%
+    \lf@imatges{chapters/contents/#1}%
+    \lf@capcalera
+    \lf@obl{chapters/contents/#1/continguts}%
+    \lf@obl{chapters/contents/#1/activitats}%
+    \lf@opc{chapters/contents/#1/investiga}%
   \else
     \GenericWarning{}{labfisica: sesion #1 omitida (estat=\sessioEstat)}%
   \fi
+}
+
+% --- \lfUnitat{ruta}{parte} ----------------------------------------
+% Compila UNA parte suelta, con su cabecera y sus imágenes resueltas.
+% La ruta es relativa a tex/, así que sirve para los dos sitios:
+%
+%   \lfUnitat{chapters/contents/sessio_01}{solucions}
+%   \lfUnitat{quaderns/vectors}{continguts}
+%
+% A diferencia de \sessio, NO mira el estat: es la herramienta para
+% revisar un borrador en local antes de publicarlo.
+\newcommand{\lfUnitat}[2]{%
+  \lf@reset
+  \lf@obl{#1/meta}%
+  \lf@imatges{#1}%
+  \lf@capcalera
+  \lf@obl{#1/#2}%
 }
 
 \makeatother

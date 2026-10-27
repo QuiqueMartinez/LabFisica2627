@@ -1,173 +1,58 @@
 \documentclass[twocolumn,openany,10pt]{book}
 
-% --- Idioma y codificación ---
-% El contenido de las sesiones está en català; el material extra
-% todavía tiene textos en castellano, por eso se cargan los dos.
-\usepackage[spanish,main=catalan]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-
-% --- Tipografía y maquetación ---
-\usepackage{montserrat}
-\usepackage{roboto}
-
-\renewcommand{\sfdefault}{Montserrat-TLF}
-\renewcommand{\familydefault}{\sfdefault}
-
-
-\usepackage{geometry}
-\geometry{a4paper, margin=1.10cm}
-\setlength{\columnsep}{0.80cm}
-
-% --- Párrafos ---
-\usepackage{setspace}
-\usepackage{enumitem}
-\setstretch{1.25}
-\usepackage{microtype}
-\SetTracking{encoding={*}, shape=sc}{40}
-\setlength{\parindent}{1.0em}
-\setlength{\parskip}{1.2em}
-
-% --- Propiedades de los títulos ---
-\usepackage{titlesec}
-
-% El número no se imprime: la cabecera ya dice "Sessió N" (viene de meta.tex).
-% El contador sigue avanzando, así las figuras se numeran 1.1, 1.2, 2.1...
-\titleformat{\chapter}
-  {\normalfont\Large\bfseries}
-  {}{0pt}{}
-
-\titleformat{\section}
-  {\normalfont\large\bfseries}
-  {\thesection}{1em}{}
-
-\titleformat{\subsection}
-  {\normalfont\normalsize\bfseries}
-  {\thesubsection}{1em}{}
-
-\makeatletter
-\renewcommand\section{\@startsection
-  {section}{1}{0pt}
-  {0.8ex plus .2ex minus .2ex}
-  {0.4ex plus .2ex}
-  {\normalfont\Large\bfseries}
-}
-
-\renewcommand\subsection{\@startsection
-  {subsection}{2}{0pt}
-  {0.4ex plus .2ex minus .2ex}
-  {0.15ex plus .1ex}
-  {\normalfont\large\bfseries}
-}
-
-\renewcommand\subsubsection{\@startsection
-  {subsubsection}{3}{0pt}
-  {0.10ex plus .05ex minus .05ex}
-  {0.05ex plus .01ex}
-  {\normalfont\normalsize\bfseries}
-}
-\makeatother
-
-\usepackage[font={small,it}]{caption}
-\setcounter{secnumdepth}{0}
-
-% --- Notas al pie ---
-\setlength{\skip\footins}{2.0em}
-\setlength{\footnotesep}{1.2em}
-\setlength{\belowcaptionskip}{0pt}
-
-% --- Gráficos y tablas ---
-\usepackage{graphicx}
-\usepackage{booktabs}
-\usepackage{tabularx}
-\usepackage{multirow}
-\usepackage{textcomp}
-\usepackage{changepage}
-\usepackage{float}
-
-% --- Matemáticas ---
-\usepackage{amsmath, amssymb}
-\usepackage[version=4]{mhchem}
-
-% --- Macros del proyecto (\sessio, \sessioMeta) ---
-\input{styles/labfisica}
-
-% --- Pie de página ---
-\usepackage{fancyhdr}
-
-% --- Presentacion ----
-\usepackage[most]{tcolorbox}
-\usepackage{array}
-
-% --- Espacio entre las fórmulas
-\setlength{\abovedisplayskip}{4pt}
-\setlength{\belowdisplayskip}{4pt}
-\setlength{\abovedisplayshortskip}{2pt}
-\setlength{\belowdisplayshortskip}{2pt}
-
-
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[R]{%
-    {\roboto\robotocondensed\small
-    Traducció al català assistida per intel·ligència artificial.}%
-}
-\fancyfoot[C]{%
-  \footnotesize
-  Copyleft 2026 · Enrique Martínez Bueno · Textos sota llicència CC BY-SA 4.0
-}
-
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0.4pt}
-
-% Los capítulos de book usan automáticamente el estilo "plain".
-% Lo redefinimos para que el pie aparezca también en esas páginas.
-\fancypagestyle{plain}{
-  \fancyhf{}
-\fancyhead[R]{%
-    {\roboto\robotocondensed\small
-    Traducció al català assistida per intel·ligència artificial.}%
-}
-  \fancyfoot[C]{%
-    \footnotesize
-    Copyleft 2026 · Enrique Martínez Bueno · Textos sota llicència CC BY-SA 4.0
-  }
-  \renewcommand{\headrulewidth}{0pt}
-  \renewcommand{\footrulewidth}{0.4pt}
-}
+% Todo el estilo vive en styles/preambul.tex, que tambien cargan los
+% wrappers que genera build.py. Asi las piezas sueltas y el dossier
+% salen identicos. Ver LAB-10.
+\input{styles/preambul}
 
 \begin{document}
 
 \mainmatter
 
-% --- Sesiones ---
-% Cada \sessio lee su meta.tex y monta continguts + activitats
-% (+ investiga, si existe). Las sesiones en estat=esborrany se omiten.
+% =====================================================================
+%  BANCO DE PRUEBAS LOCAL
+%  Descomenta lo que quieras ver y compila. Nada de esto decide lo que
+%  se publica: de eso se encarga el campo estat de cada meta.tex.
+% =====================================================================
+
+% --- Una unidad entera -----------------------------------------------
+% \sessio monta cabecera + continguts + activitats (+ investiga).
+% RESPETA estat: las sesiones en esborrany se omiten con un warning.
 %\sessio{sessio_01}
 %\sessio{sessio_02}
+%\sessio{sessio_03}
+%\sessio{sessio_04}
+%\sessio{sessio_05}
 
-% --- Material extra ---
+% --- Una parte suelta ------------------------------------------------
+% \lfUnitat{ruta}{parte} resuelve las imágenes y pone la cabecera.
+% IGNORA estat: es la herramienta para revisar un borrador en local.
+%\lfUnitat{chapters/contents/sessio_01}{continguts}
+%\lfUnitat{chapters/contents/sessio_01}{activitats}
+%\lfUnitat{chapters/contents/sessio_01}{solucions}
+%\lfUnitat{chapters/contents/sessio_02}{continguts}
+%\lfUnitat{chapters/contents/sessio_02}{activitats}
+%\lfUnitat{chapters/contents/sessio_02}{solucions}
+%\lfUnitat{chapters/contents/sessio_03}{continguts}
+%\lfUnitat{chapters/contents/sessio_03}{activitats}
+%\lfUnitat{chapters/contents/sessio_04}{continguts}
+%\lfUnitat{chapters/contents/sessio_04}{activitats}
+%\lfUnitat{chapters/contents/sessio_04}{solucions}
+\lfUnitat{chapters/contents/sessio_05}{continguts}
+%\lfUnitat{chapters/contents/sessio_05}{practica}
+
+% --- Un cuadernillo --------------------------------------------------
+% OJO: \lfUnitat no lleva estilo, lo hereda del preambulo de ESTE fichero
+% (dos columnas, Montserrat, margen 1,10 cm). Solo sirve para un
+% cuadernillo que reutilice a proposito el estilo de las sesiones.
+% Un cuadernillo con su propia maqueta no se compila desde aqui: es su
+% propio .tex con su propio preambulo, o un PDF hecho a mano (campo pdf).
+%\lfUnitat{quaderns/vectors}{continguts}
+
+% --- Material extra --------------------------------------------------
 %\chapter{Material extra}
 %\graphicspath{{chapters/contents/extra/}{}}
 %\input{chapters/contents/extra/noticies}
 %\input{chapters/contents/extra/recomanacions}
 
-%\input{chapters/contents/sessio_01/continguts.tex}
-%\input{chapters/contents/sessio_01/activitats.tex}
-%\input{chapters/contents/sessio_01/solucions.tex}
-
-%\input{chapters/contents/sessio_02/continguts.tex}
-%\input{chapters/contents/sessio_02/activitats.tex}
-%\input{chapters/contents/sessio_02/solucions.tex}
-
-%\input{chapters/contents/sessio_03/continguts.tex}
-
-%\input{chapters/contents/sessio_04/continguts.tex}
-%\input{chapters/contents/sessio_04/activitats.tex}
-%\input{chapters/contents/sessio_04/solucions.tex}
-
-%\input{draft/continguts.tex}
-%\input{draft/activitats.tex}
-%\input{draft/solucions.tex}
-\input{chapters/contents/sessio_05/continguts.tex}
 \end{document}
