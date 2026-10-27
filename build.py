@@ -191,6 +191,72 @@ def compilar(p, salida, verbose=False):
     return destino
 
 
+INDEX = RAIZ / "docs" / "index.html"
+
+# <li><a class="pdf" href="pdf/XXX.pdf">Texto</a>  [<small>...</small>]  </li>
+RE_BOTON = re.compile(
+    r'(<li>\s*<a class="pdf" href="pdf/([^"]+)\.pdf">.*?</a>)'
+    r'(\s*<small class="versio">.*?</small>)?'
+    r'(\s*</li>)',
+    re.DOTALL,
+)
+
+
+def fecha_git(ruta):
+    """Fecha del ultimo commit que toco ese fichero, en dd/mm/aaaa.
+
+    Del PDF, no del .tex: es la fecha en que esa version se publico, y no
+    se mueve porque alguien reorganice las fuentes. Nunca la fecha de
+    compilar, o todo cambiaria de fecha en cada pasada.
+    """
+    try:
+        r = subprocess.run(["git", "log", "-1", "--format=%cs", "--", str(ruta)],
+                           cwd=str(RAIZ), capture_output=True, text=True)
+    except OSError:
+        return None
+    iso = (r.stdout or "").strip()
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", iso):
+        return None
+    a, m, d = iso.split("-")
+    return d + "/" + m + "/" + a
+
+
+def actualizar_index():
+    """Escribe bajo cada boton la fecha de la ultima version de su PDF."""
+    if not INDEX.is_file():
+        print("No encuentro " + str(INDEX))
+        return 1
+    html = INDEX.read_text(encoding="utf-8")
+    puestas, sin_fecha = [], []
+
+    def sustituye(m):
+        boton, nombre, _viejo, cierre = m.groups()
+        pdf = INDEX.parent / "pdf" / (nombre + ".pdf")
+        fecha = fecha_git(pdf) if pdf.is_file() else None
+        if not fecha:
+            sin_fecha.append(nombre)
+            return boton + cierre          # quita la fecha anterior si habia
+        puestas.append((nombre, fecha))
+        return (boton + '<small class="versio">Actualitzat el ' + fecha +
+                "</small>" + cierre)
+
+    nuevo, n = RE_BOTON.subn(sustituye, html)
+    if n == 0:
+        print("No he encontrado ningun boton <a class=\"pdf\"> en el index.")
+        return 1
+    if nuevo != html:
+        INDEX.write_text(nuevo, encoding="utf-8", newline="\n")
+        print("  " + str(INDEX.name) + " actualizado")
+    else:
+        print("  " + str(INDEX.name) + " ya estaba al dia")
+    for nombre, fecha in puestas:
+        print("    " + nombre.ljust(26) + fecha)
+    for nombre in sin_fecha:
+        print("    " + nombre.ljust(26) + "sin fecha: el PDF no esta "
+              "commiteado todavia")
+    return 0
+
+
 def cargar_manifest():
     if MANIFEST.is_file():
         try:
@@ -316,7 +382,13 @@ def main():
                     help="incluye las sesiones con estat = esborrany")
     ap.add_argument("--verbose", action="store_true",
                     help="vuelca la salida de latexmk")
+    ap.add_argument("--index", action="store_true",
+                    help="escribe en docs/index.html la fecha de la ultima "
+                         "version de cada PDF, y no compila nada")
     args = ap.parse_args()
+
+    if args.index:
+        sys.exit(actualizar_index())
 
     if not (TEX / "styles" / "preambul.tex").is_file():
         sys.exit("Falta tex/styles/preambul.tex.")
