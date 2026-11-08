@@ -4,7 +4,7 @@ build.py — genera un PDF por pieza a partir de los .tex del proyecto.
 
 Sustituye el ritual de descomentar lineas en main.tex, compilar, renombrar
 y copiar. Lee el meta.tex de cada sesion, escribe un wrapper de usar y
-tirar, y compila con latexmk.
+tirar, y compila con pdflatex.
 
 Solo recompila lo que ha cambiado de verdad: guarda el sha256 del .tex y
 de sus imagenes en un manifest y compara. Las fechas del disco no se usan
@@ -28,6 +28,10 @@ RAIZ = Path(__file__).resolve().parent
 TEX = RAIZ / "tex"
 UNIDADES = TEX / "chapters" / "contents"
 MANIFEST = RAIZ / ".build-manifest.json"
+
+# Motor de compilacion. pdflatex y no latexmk: ver el comentario en
+# compilar(). Si algun dia hace falta lualatex, se cambia aqui.
+MOTOR = "pdflatex"
 
 # Ficheros de estilo compartidos: si cambian, TODAS las piezas quedan
 # desfasadas. No se recompilan de oficio, solo se avisa.
@@ -159,6 +163,52 @@ def hash_compartido():
     return sha([f.read_bytes() for f in COMPARTIDOS if f.is_file()])
 
 
+def explicar_fallo(nombre, r, log):
+    """Dice de que tipo es el fallo, que es lo primero que uno quiere saber.
+
+    Son tres clases muy distintas y se confunden si solo pones "ERROR":
+    un error de LaTeX, un fichero bloqueado por un visor abierto, o
+    el motor que no ha podido ni arrancar.
+    """
+    salida_cruda = (r.stdout or "") + "\n" + (r.stderr or "")
+    texto_log = ""
+    if log.is_file():
+        texto_log = log.read_text(encoding="utf-8", errors="replace")
+
+    # Un fichero bloqueado se delata en el log de pdfTeX o en stderr.
+    bloqueo = re.search(r"I can'?t write on file|Permission denied|"
+                        r"being used by another process|proceso no tiene acceso",
+                        salida_cruda + texto_log, re.IGNORECASE)
+    if bloqueo:
+        print("  FICHERO BLOQUEADO al compilar " + nombre)
+        print("    Algo tiene abierto un fichero de salida. Cierra el visor "
+              "de PDF y repite.")
+        return
+
+    # Errores de LaTeX de verdad: las lineas que empiezan por "!".
+    errores = [l.rstrip() for l in texto_log.splitlines() if l.startswith("!")]
+    if errores:
+        print("  ERROR DE LATEX en " + nombre)
+        for l in errores[:5]:
+            print("    " + l)
+        # La linea del .tex donde paro, si pdfTeX la ha dicho.
+        donde = re.findall(r"(?m)^l\.(\d+)(.*)$", texto_log)
+        if donde:
+            print("    cerca de la linea " + donde[0][0] + ":" +
+                  donde[0][1][:70])
+        print("    log completo: " + str(log))
+        return
+
+    # Ni bloqueo ni error de LaTeX: el motor no arranco o murio.
+    print("  FALLO DE " + MOTOR.upper() + " en " + nombre + " (codigo " +
+          str(r.returncode) + ")")
+    lineas = [l.rstrip() for l in salida_cruda.splitlines() if l.strip()]
+    for l in lineas[-8:]:
+        print("    " + l)
+    if not lineas:
+        print("    " + MOTOR + " no ha dicho nada. Sin log: " + str(log))
+
+
 def compilar(p, salida, verbose=False):
     nombre = p["nombre"]
     wrapper = TEX / ("_build_" + nombre + ".tex")
@@ -168,24 +218,58 @@ def compilar(p, salida, verbose=False):
              .replace("@@UNIDAD@@", p["unidad"])
              .replace("@@PARTE@@", p["parte"].stem))
     wrapper.write_text(texto, encoding="utf-8", newline="\n")
-    cmd = ["latexmk", "-pdf", "-interaction=nonstopmode", "-halt-on-error",
-           "-outdir=" + str(auxdir), wrapper.name]
+    producido = auxdir / ("_build_" + nombre + ".pdf")
+    log = auxdir / ("_build_" + nombre + ".log")
+    # Fuera el PDF y el log de la pasada anterior: asi lo que quede
+    # despues es de esta, y no se mueve nunca un PDF rancio.
+    for viejo in (producido, log):
+        try:
+            viejo.unlink(missing_ok=True)
+        except PermissionError:
+            print("  BLOQUEADO " + viejo.name + ": lo tiene abierto otro "
+                  "programa. Cierralo y vuelve a lanzar build.py.")
+            wrapper.unlink(missing_ok=True)
+            return None
+
+    # pdflatex directo, no latexmk: latexmk es un script de Perl y la
+    # deteccion del motor de scripts de MiKTeX falla de forma
+    # inconsistente segun la consola. pdflatex es un binario nativo.
+    # Estos documentos no llevan bibliografia ni indice, asi que lo unico
+    # que aportaba latexmk era repetir la pasada cuando hacia falta, y eso
+    # se hace aqui mirando el log.
+    cmd = [MOTOR, "-interaction=nonstopmode", "-halt-on-error",
+           "-output-directory=" + str(auxdir), wrapper.name]
     try:
-        r = subprocess.run(cmd, cwd=str(TEX), capture_output=True,
-                           text=True, errors="replace")
+        for pasada in range(3):
+            r = subprocess.run(cmd, cwd=str(TEX), capture_output=True,
+                               text=True, errors="replace")
+            if r.returncode != 0 or not log.is_file():
+                break
+            texto = log.read_text(encoding="utf-8", errors="replace")
+            if not re.search(r"Rerun to get|There were undefined references|"
+                             r"Label\(s\) may have changed", texto):
+                break
+            if verbose:
+                print("    repitiendo pasada (referencias sin resolver)")
     finally:
         wrapper.unlink(missing_ok=True)
 
-    producido = auxdir / ("_build_" + nombre + ".pdf")
     if r.returncode != 0 or not producido.is_file():
-        print("  ERROR compilando " + nombre)
-        errores = [l for l in (r.stdout or "").splitlines() if l.startswith("!")]
-        for l in (errores[:6] or (r.stdout or "").splitlines()[-12:]):
-            print("    " + l)
+        explicar_fallo(nombre, r, log)
         return None
 
     destino = salida / (nombre + ".pdf")
-    shutil.move(str(producido), str(destino))
+    try:
+        shutil.move(str(producido), str(destino))
+    except PermissionError:
+        # En Windows, un PDF abierto en un visor esta bloqueado. Pasa a
+        # menudo revisando, asi que se avisa y se sigue con los demas.
+        print("  BLOQUEADO " + nombre + ".pdf: lo tiene abierto otro programa.")
+        print("    Cierralo en el visor y vuelve a lanzar build.py.")
+        return None
+    except OSError as e:
+        print("  ERROR moviendo " + nombre + ".pdf: " + str(e))
+        return None
     if verbose:
         print((r.stdout or "")[-1500:])
     return destino
@@ -392,8 +476,9 @@ def main():
 
     if not (TEX / "styles" / "preambul.tex").is_file():
         sys.exit("Falta tex/styles/preambul.tex.")
-    if not shutil.which("latexmk"):
-        sys.exit("No encuentro latexmk en el PATH.")
+    if not shutil.which(MOTOR):
+        sys.exit("No encuentro " + MOTOR + " en el PATH. Abre una consola "
+                 "donde MiKTeX este visible, o reinstala MiKTeX.")
 
     salida = (RAIZ / args.out).resolve()
     salida.mkdir(parents=True, exist_ok=True)

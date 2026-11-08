@@ -84,13 +84,42 @@
 % images/foto.jpg.
 \newcommand{\lf@imatges}[1]{\graphicspath{{#1/images/}{#1/}{}}}
 
-% Cabecera: "Sessió 1. Títol" si hay número; solo "Títol" si no lo hay
-% (un cuadernillo no es una sessió).
-\newcommand{\lf@capcalera}{%
-  \ifx\sessioNumero\lf@buit
-    \chapter{\sessioTitol}%
+% --- Cabecera de cada parte ----------------------------------------
+% Todo PDF empieza con \chapter, y es la UNICA cabecera: los ficheros de
+% contenido no llevan titulo propio.
+%
+%   continguts  ->  Sessió 1. Què és tot això de la ciència?
+%   activitats  ->  Sessió 1. Quadern de laboratori
+%   solucions   ->  Sessió 1. Solucions
+%
+% O sea: continguts lleva el titulo de la sessio, y el resto lleva la
+% etiqueta de su parte. La palabra "Continguts" no aparece nunca.
+%
+% Para anadir una parte nueva, define su etiqueta aqui:
+\newcommand{\lf@et@activitats}{Quadern de laboratori}
+\newcommand{\lf@et@solucions}{Solucions}
+\newcommand{\lf@et@practica}{Pràctica de laboratori}
+\newcommand{\lf@et@investiga}{Investiga}
+
+% Sin etiqueta definida, se usa el nombre del fichero tal cual.
+\newcommand{\lf@etiqueta}[1]{%
+  \@ifundefined{lf@et@#1}{#1}{\@nameuse{lf@et@#1}}%
+}
+
+\newcommand{\lf@continguts}{continguts}
+
+% Sin numero (un cuadernillo no es una sessió) se omite el "Sessió N.".
+\newcommand{\lf@capcalera}[1]{%
+  \def\lf@parte{#1}%
+  \ifx\lf@parte\lf@continguts
+    \def\lf@rotul{\sessioTitol}%
   \else
-    \chapter{Sessió \sessioNumero. \sessioTitol}%
+    \def\lf@rotul{\lf@etiqueta{#1}}%
+  \fi
+  \ifx\sessioNumero\lf@buit
+    \chapter{\lf@rotul}%
+  \else
+    \chapter{Sessió \sessioNumero. \lf@rotul}%
   \fi
 }
 
@@ -102,8 +131,9 @@
   \lf@obl{chapters/contents/#1/meta}%
   \ifx\sessioEstat\lf@publicat
     \lf@imatges{chapters/contents/#1}%
-    \lf@capcalera
+    \lf@capcalera{continguts}%
     \lf@obl{chapters/contents/#1/continguts}%
+    \lf@capcalera{activitats}%
     \lf@obl{chapters/contents/#1/activitats}%
     \lf@opc{chapters/contents/#1/investiga}%
   \else
@@ -124,7 +154,7 @@
   \lf@reset
   \lf@obl{#1/meta}%
   \lf@imatges{#1}%
-  \lf@capcalera
+  \lf@capcalera{#2}%
   \lf@obl{#1/#2}%
 }
 
